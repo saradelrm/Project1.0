@@ -110,12 +110,6 @@ h3
     padding-left:15px 
 }
 
-.col-md-6{
-    -ms-flex:0 0 50%;
-    flex:0 0 50%;
-    max-width:50%
-}
-
 .col {
     -ms-flex-preferred-size:0;
     flex-basis:0;
@@ -180,53 +174,6 @@ nav .basket-shop span
     font-size:  15px;
     color: white;
     text-transform:uppercase;
-}
-
-/* SECTION #1 -----------------
- ------------------------------*/
-
- .places-text
- {
-     margin-top: 50px;
- }
- .places-text h2
- {
-     margin-bottom:30px;
-     margin-right: 20px;
- }
-
- #place-1 img
- {
-    margin: 70px auto;
-    box-shadow: 0 0 20px rgba(0,0,0,.3);
-    display: flex;
-    justify-content: flex-end;
-    align-items: right;
-    width: 100%;
-    height: auto;
- }
-
-/* SECTION #2 -----------------
- ------------------------------*/
-
- #place-2 h2
- {
-     text-align: center;
-     max-width: 900px;
- }
-
- #place-2 h2
- {
-    margin: 100px auto 20px auto;
- }
-
- #place-2 img
-{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 80px;
-
 }
 
 /* XPERIENCIES -----------------
@@ -322,7 +269,6 @@ button:hover
 {
     background-color: var(--textColor);    
 }
-
 
 /* FOOTER -----------------
  ------------------------------*/
