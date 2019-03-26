@@ -201,56 +201,6 @@ nav .basket-shop span
      font-size: 20px;
  }
 
-/* NEWSLETTER -----------------
- ------------------------------*/
-
- section#newsletter
- {
-    width: 100%;
-    height: 50vh; /* So it covers the whole page*/
-    background-color: var(--titleColor);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
- }
-
- section#newsletter h2
- {
-     margin-bottom: 20px;
- }
- section#newsletter p{
-     max-width: 700px;
-     margin:0 auto;
-     margin-bottom: 30px;
- }
-
-.newsletter-box
-{
-    background-color: white;
-    padding: 50px;
-    box-shadow: 0 0 20px rgba(0,0,0,.3);
-}
-
-form
-{
-    max-width: 600px;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-}
-
-form input[type='email']
-{
-    flex-basis: 50%;
-    background-color: #E8E8E8;
-    border: none;
-    padding: 15px;
-}
-
 button
 {
     background-color: var(--titleColor);
@@ -284,4 +234,3 @@ button:hover
      color: #E8E8E8;
      text-align: center;
  }
-
