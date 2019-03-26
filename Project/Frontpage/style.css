@@ -73,6 +73,32 @@ h3
     font-size: 28px;
     line-height: 38px;
 }
+
+.img-responsive 
+ {
+     width: 50%;
+     height: auto;
+ }
+
+ .btn:link,
+ .btn:visited
+ {
+    background-color: var(--titleColor);
+    color: white;
+    text-decoration: none;      /* We erase the underline from links*/
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding: 15px 25px;
+    font-size: 14px;
+    transition: background-color .3s;
+ }
+
+ .btn:hover,
+ .btn:active
+ {
+    background-color: var(--textColor);
+ }
+
 .col-md-3{
     -ms-flex:0 0 25%;
     flex:0 0 25%;
