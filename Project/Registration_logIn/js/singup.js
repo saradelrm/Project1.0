@@ -51,7 +51,7 @@ class User {
   
   // Bind the button to a variable for later use
   var submit = document.getElementById('submit');
-  var register = document.getElementById('register');
+  var signUp = document.getElementById('signUp');
   
   // Bind the span for result text for later use
   var resultSpan = document.getElementById('loginResult');
@@ -59,8 +59,8 @@ class User {
   // Bind a counter in order to see if the user has tried to login too many times
   var counter = 3;
   
-  if (register) {
-    register.onclick = function () {
+  if (signUp) {
+    signUp.onclick = function () {
     // Bind the two input fields and get the value
       var inputUsername = document.getElementById('username');
       var inputPassword = document.getElementById('password');
