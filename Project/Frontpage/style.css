@@ -348,6 +348,8 @@ button:hover
 .col2 img
 {
     align: left;
+    height: 40px;
+    width: 200px;
 
 }
 
