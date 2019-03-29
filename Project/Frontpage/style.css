@@ -323,9 +323,23 @@ button:hover
     background-color: var(--textColor);    
 }
 
+/*Experience 1 page*/
+.col1
+{
+   float: left;
+   width: 35%;
+   -ms-flex:0 0 50%;
+}
+
+.col2
+{
+   float: right;
+   width: 65%;
+   
+}
 
 /* FOOTER -----------------
- ------------------------------*/
+ ------------------------------ */
 
  footer
  {
@@ -338,4 +352,3 @@ button:hover
      color: #E8E8E8;
      text-align: center;
  }
-
