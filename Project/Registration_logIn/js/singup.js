@@ -2,10 +2,11 @@
 class User {
 
     // The constructor for our class, which will allow us to create new objects of our class
-    constructor(firstname, lastname, username, password, lastAccess) {
+    constructor(firstname, lastname, username, email, password, lastAccess) {
       this.firstname = firstname;
       this.lastname = lastname;
       this.username = username;
+      this.email = email;
       this.password = password;
       this.lastAccess = lastAccess;
     }
@@ -45,7 +46,7 @@ class User {
   } else {
     users = JSON.parse(localStorage.getItem('users'));
     for (let i = 0; i < users.length; i++) {
-      users[i] = new User(users[i].firstname, users[i].lastname, users[i].username, users[i].password, users[i].lastAccess);
+      users[i] = new User(users[i].firstname, users[i].lastname, users[i].username, users[i].email, users[i].password, users[i].lastAccess);
     }
   }
   
@@ -62,8 +63,12 @@ class User {
   if (signUp) {
     signUp.onclick = function () {
     // Bind the two input fields and get the value
-      var inputUsername = document.getElementById('username');
-      var inputPassword = document.getElementById('password');
+    var inputFirstName = document.getElementById('firstname');
+    var inputLastname = document.getElementById('lastname');
+    var inputUsername = document.getElementById('username');
+    var inputUserEmail = document.getElementById ('email')
+    var inputPassword = document.getElementById('password');
+    
   
       if(inputUsername.value.length == 0 || inputPassword.value.length == 0){
         // We set the resultspan with a new text and return false to get out of this function
@@ -73,7 +78,7 @@ class User {
   
       // TODO check if username is already registered 
   
-      users.push(new User(inputUsername.value, null, inputUsername.value, User.prototype.hashPassword(inputPassword.value)));
+      users.push(new User(inputFirstName.value, inputLastname.value, inputUsername.value, inputUserEmail.value, User.prototype.hashPassword(inputPassword.value)));
       localStorage.setItem('users', JSON.stringify(users));
     }
   }
