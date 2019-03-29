@@ -12,12 +12,15 @@
     <div class="signin">
         <form>
             <h2 style="color:white">log In</h2>
-            <input type="text" name="username" placeholder="Username">
+            <input type="text" name="username" placeholder="Username" id="username">
             <br><br>
-            <input type="password" name="pass" placeholder="Password">
+            <input type="password" name="password" placeholder="Password" id="password" >
             <br><br>
-            <a href="cong.html"><input type="button" value="Log In"></a><br>
-            <br><br>
+            <input type="button" value="Login" name="submit" id="submit" />
+            <br><br><br>
+            
+            <span id="loginResult"></span>
+           
             <div class="container">
             <a href="re.html" style="margin-right:0px; font-size:13px; font-family: Tahima, Geneva, sans-serif;">
             Reset password?</a>
@@ -25,6 +28,8 @@
             Don't have account? <a href="singup.html">&nbsp;Sing Up</a>
         </form>
     </div>
+
+<script src="./js/singup.js"></script>
 
 
 </body>
