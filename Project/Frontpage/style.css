@@ -260,7 +260,7 @@ nav .basket-shop span
  section#newsletter
  {
     width: 100%;
-    height: 50vh; /* So it covers the whole page*/
+    height: 60vh; /* So it covers the whole page*/
     background-color: var(--titleColor);
     background-size: cover;
     background-position: center;
@@ -323,9 +323,39 @@ button:hover
     background-color: var(--textColor);    
 }
 
+/*Experience 1 page*/
+.col1
+{
+   float: left;
+   width: 35%;
+   -ms-flex:0 0 50%;
+}
+
+ .col1 img
+{
+    height: 270px;
+    width: 350px;
+}
+
+
+.col2
+{
+   float: right;
+   width: 65%;
+   
+}
+
+.col2 img
+{
+    align: left;
+    height: 40px;
+    width: 200px;
+
+}
+
 
 /* FOOTER -----------------
- ------------------------------*/
+ ------------------------------ */
 
  footer
  {
@@ -338,4 +368,3 @@ button:hover
      color: #E8E8E8;
      text-align: center;
  }
-
