@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-<title>Shopping Cart</title>
+    <title>Shopping Cart</title>
 <link href = "style.css" rel= "stylesheet" type = "text/css">
-
 </head>
+
 <body>
     <header>
-            <nav>
+        <nav>
                 <div class= "container"> <!--divs should be used to wrap sections of a document-->
                     <div class="text-content">
                             <h1> Xperience Nordic</h1>   
@@ -30,16 +30,35 @@
                 <div class="basket-shop">
                         <a href="./cart.html"><img src="Pictures/Basket.png" alt="Basket shop icon" ></a>
                         <span> Basket (0)</span> <!-- span used to wrap small portions of text --> 
-                </div>
-            </nav>
+            </div>
+        </nav>
     </header>
 
     <h1>Shopping Cart</h1>
+    <h2 id="cart-summary"></h2>
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name:</th>
+                <th>Price:</th>
+                <th>Quantity:</th>
+            </tr>
+        </thead>
+
+        <tbody id="cart-content">
+
+        </tbody>
+
+    </table>
+
+</div>
 
     <button id="back-btn" onclick="location.href= 'index.html'">Go back to shop</button>
-    
-    <h2 id="cart-summary"></h2>
-    
+    <button id="checkout-btn" onclick="location.href= '#'">Checkout</button>
+<br>
+
     <footer>
         <div class="row-2">
           
@@ -48,38 +67,10 @@
         </div>
     </footer>
 
+
+
 </body> 
 
-<!--<body>
-    <h1>Shopping Cart</h1>
-
-    <button id="back-btn" onclick="location.href= 'index.html'">Go back to shop</button>
-    
-    <h2 id="cart-summary"></h2>
-    
-    <div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name:</th>
-                    <th>Brand:</th>
-                    <th>Price:</th>
-                    <th>Quantity:</th>
-                </tr>
-            </thead>
-           
-            <tbody id="cart-content">
-
-            </tbody>
-            
-        </table>
-    </div>
-
-    
-    <div>
-        <button id="continue-btn">Continue to checkout</button>
-    </div>
--->  
     <script src="../src/xperience.js"></script>
     <script src="../src/products.js"></script>
     <script src="../src/views.js"></script>
