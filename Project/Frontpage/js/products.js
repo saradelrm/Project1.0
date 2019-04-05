@@ -7,9 +7,12 @@ let products = []
 
 // Load the current database of products from localStorage
 const loadProducts = () => {
-    products = [new Xperience('Xperience1', 216.66, './Pictures/CPH2.jpg','./CPH-exp1.html', '98336088-aa0f-4147-804a-bce1dce2d36e'),
-                new Xperience('Xperience2', 225.33, './Pictures/CPH.jpg', './CPH-exp2.html', '7aae3eb0-6611-4259-ab8f-4fae4a5d1bbe'),
-                new Xperience('Xperience3', 225.33, './Pictures/CPH.jpg', './CPH-exp3.html', '7aae3eb0-6611-4259-ab8f-4fae4a5d1bbe')]
+    products = [new Xperience('Enjoy a day at Serenity Spa!','Spa day','The spa\'s facilities include a jacuzzi, a relaxation area, a sauna, an aromatherapy steam room and a pool looking out over the Danish countryside.You can choose a 60-minute treatment from the treatment menu - we like the sound of the Sensory Body Massage with Hot Stones, the Raindrop Massage or the English Rose Radiance Facial. The Serenity Spa Guide praises the venue\'s "countryside views" and "floor-to-ceiling windows" that "fill the pool and Jacuzzi area with natural light" ' 
+    , "999 DKK", './Pictures/Exp1.jpg', './Pictures/Rating1.png','./CPH-exp1.html', 'exp1'),
+                new Xperience('Give your nails some love!','Manicure madness','The spa\'s facilities include a jacuzzi, a relaxation area, a sauna, an aromatherapy steam room and a pool looking out over the Danish countryside.You can choose a 60-minute treatment from the treatment menu - we like the sound of the Sensory Body Massage with Hot Stones, the Raindrop Massage or the English Rose Radiance Facial. The Serenity Spa Guide praises the venue\'s "countryside views" and "floor-to-ceiling windows" that "fill the pool and Jacuzzi area with natural light" ' 
+                , "199 DKK", './Pictures/Exp2.jpg','./Pictures/Rating2.png','./CPH-exp2.html', 'exp2'),
+                new Xperience('Brew your own coffee!','Barista day','Experience brewing your own coffee with Danish host Claus in his own home! In the 2 hours, you will have the chance to taste at least 4 cups of coffee prepared in different methods. We will use the method of coffee cupping and you will learn the technique of making your own pour-over coffee. Claus will also talk about the coffee culture in Denmark and, of course,  can give you some personal recommendations on places to go while you are in Copenhagen. You don\'t need to bring anything, we have all the equipment here. Make sure you have a little breakfast before.                ' 
+                , "299 DKK", './Pictures/Exp3.jpg','./Pictures/Rating3.png','./CPH-exp3.html', 'exp3')]
 }
 
 // Create a function to get the most recent list of products
