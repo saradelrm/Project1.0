@@ -17,3 +17,6 @@ const generateShopDOM = () => {
 
     productCatalog.innerHTML = html
 }
+
+// Invoke the generateShopDOM() to render the DOM
+generateShopDOM()
