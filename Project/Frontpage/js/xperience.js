@@ -18,7 +18,7 @@ class Xperience {
                     <td>${this.name}</td>
                     <td>${this.price}</td>
                     <td>
-                        <button class="more-details-btn" onclick="location.href='${this.details_url}'"; data-id="${this.id}">More details</button>
+                        <button class="more-details-btn" onclick="location.href='CPH-exp.html#${this.id}'"; data-id="${this.id}">More details</button>
                     </td>
                 </tr>
     `}
