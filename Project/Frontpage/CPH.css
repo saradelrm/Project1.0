@@ -176,6 +176,21 @@ nav .basket-shop span
     text-transform:uppercase;
 }
 
+nav .log-in
+{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+nav .log-in span
+{
+ 
+    font-size:  15px;
+    color: white;
+    text-transform:uppercase;
+}
+
 /* XPERIENCIES -----------------
  ------------------------------*/
 
