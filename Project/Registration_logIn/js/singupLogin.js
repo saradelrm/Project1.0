@@ -123,7 +123,8 @@ class User {
           // We set the resultspan with a new text and return true to get out of this function.
           // TODO: We wan't something better than unixtime for the user!
           resultSpan.innerText = "Hi " + user.firstname + " " + user.lastname + ", you've successfully entered the system";
-  
+          window.location.replace("../Frontpage/purchase.html");
+
           // Return true to jump out of the function, since we now have all we need.
           return true;
         }
