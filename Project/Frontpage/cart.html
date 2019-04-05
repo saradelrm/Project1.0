@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+
+    <button id="back-btn" onclick="location.href= 'index.html'">Go back to shop</button>
+    
+    <h2 id="cart-summary"></h2>
+    
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name:</th>
+                    <th>Brand:</th>
+                    <th>Price:</th>
+                    <th>Quantity:</th>
+                </tr>
+            </thead>
+           
+            <tbody id="cart-content">
+
+            </tbody>
+            
+        </table>
+    </div>
+
+    <div>
+        <input type="text" name="" id="" placeholder="Have a voucher code?">
+        <input type="submit" value="Apply Voucher">
+    </div>
+    
+    <div>
+        <button id="continue-btn">Continue to checkout</button>
+    </div>
+    
+    <script src="../src/gin.js"></script>
+    <script src="../src/products.js"></script>
+    <script src="../src/views.js"></script>
+    <script src="./scripts/cart.js"></script>
+</body>
+</html>
