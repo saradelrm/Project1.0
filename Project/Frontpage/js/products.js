@@ -25,7 +25,8 @@ const loadProducts = () => {
 
 }
 
-// Create a function to get the products that match the capital where we are locatedº
+// Create a function to get the products that match the capital where we are located (CPH, OSL, STK) 
+// Looping through all the products until it find the ones matching the capital URL above 
 
 function getProducts() {
    
