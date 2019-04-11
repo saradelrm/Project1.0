@@ -1,14 +1,13 @@
 
 
 class Xperience {
-    constructor(title, name, description, price, img_url, rating, details_url, id) {
+    constructor(title, name, description, price, img_url, rating, id) {
         this.title = title,
         this.name = name,
         this.description = description,
         this.price = price,
         this.img_url = img_url,
         this.rating = rating,
-        this.details_url = details_url,
         this.id = id
     }
 
