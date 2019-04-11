@@ -1,5 +1,5 @@
 const id = location.hash.substring(1)
-const experiences = getProducts()
+const experiences = getAllProducts()
 
 console.log(id)
 console.log(experiences)

@@ -1,6 +1,7 @@
 let products = []
 const pageUrl = location.href
 
+// we get the capital where we are located from the URL
 const capital = pageUrl.substring(pageUrl.indexOf("page/")+5, pageUrl.length - 5 )
 console.log(capital)
 
@@ -23,9 +24,23 @@ const loadProducts = () => {
                 , "350 DKK", './Pictures/Exp5.jpg','./Pictures/Rating1.png','expOSL2')]
 }
 
-// Create a function to get the most recent list of products
+// Create a function to get the products that match the capital where we are locatedº
+
 function getProducts() {
+   
+    var productCapital = []
+   
+   for(i = 0; i < products.length; i++){
+    if (products[i].id.includes(capital)){
+        productCapital.push(products[i])
+        console.log (productCapital)
+    }
+   }
     
+return productCapital
+}
+
+function getAllProducts(){
     return products
 }
 
