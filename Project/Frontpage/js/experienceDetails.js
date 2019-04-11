@@ -15,7 +15,7 @@ document.getElementById("exp-title").innerText = experience.title
 document.getElementById("exp-description").innerText = experience.description
 document.getElementById("exp-price").innerText = experience.price
 document.getElementById("exp-rating").src = experience.rating
-document.getElementById("exp-img").src = experience.img_url// experience.img
+document.getElementById("exp-img").src = experience.img_url // experience.img
 
 //const product = data.find((product) => {
 //    return product.id === id
