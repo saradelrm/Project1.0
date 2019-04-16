@@ -11,7 +11,7 @@ class Xperience {
         this.id = id
     }
 
-    // Create a method that renders the Gin's HTML structure with dynamic data
+    // Create a method that renders the xperience's HTML structure with dynamic data
     renderHTML() {
        return `<tr>
                     <td>

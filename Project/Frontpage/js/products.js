@@ -1,4 +1,6 @@
 let products = []
+
+// we save the url
 const pageUrl = location.href
 
 // we get the capital where we are located from the URL
@@ -33,6 +35,10 @@ const loadProducts = () => {
 
 }
 
+// Load the products
+loadProducts()
+
+
 // Create a function to get the products that match the capital where we are located (CPH, OSL, STK) 
 // Looping through all the products until it find the ones matching the capital URL above 
 
@@ -54,6 +60,4 @@ function getAllProducts(){
     return products
 }
 
-// Load the products
-loadProducts()
 
