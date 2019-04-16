@@ -1,4 +1,22 @@
+const idCapital = location.hash.substring(1)
+console.log(idCapital)
 
+
+// Create a function to get the products that match the capital where we are located (CPH, OSL, STK) 
+// Looping through all the products until it find the ones matching the capital URL above 
+function getProducts() {
+   
+    var productCapital = []
+   
+   for(i = 0; i < products.length; i++){
+    if (products[i].id.includes(idCapital)){
+        productCapital.push(products[i])
+        console.log (productCapital)
+    }
+   }
+    
+return productCapital
+}
 
 class Xperience {
     constructor(title, name, description, price, img_url, rating, id) {
@@ -11,7 +29,7 @@ class Xperience {
         this.id = id
     }
 
-    // Create a method that renders the xperience's HTML structure with dynamic data
+// Create a method that renders the xperience's HTML structure with dynamic data
     renderHTML() {
        return `<tr>
                     <td>
@@ -20,8 +38,9 @@ class Xperience {
                     <td>${this.name}</td>
                     <td>${this.price}</td>
                     <td>
-                        <button class="more-details-btn" onclick="location.href='CPH-exp.html#${this.id}'"; data-id="${this.id}">More details</button>
+                        <button class="more-details-btn" onclick="location.href='xperienceDetails.html#${this.id}'"; 
+                        data-id="${this.id}">More details</button>
                     </td>
-                </tr>
-    `}
+                </tr>`
+                }
 }
