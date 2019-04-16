@@ -24,8 +24,7 @@ const loadProducts = () => {
                 , "200 DKK", './Pictures/xp8.jpg','./Pictures/Rating2.png','xpSTK2'),
                 new Xperience('Discover the Nordic kitchen!','Cooking class','Do you want to learn how Swedish people cook? Then you should try a cooking class, and Stockholm has some good ones to offer. Here you can learn how to cook with Scandinavian ingredients, what New Nordic food or fermentation is. You can also learn how to bake the perfect bread with your own sourdough or how to create the juiciest Swedish meatballs. The owner Mark Jonsson is a double Masterchef winner, cookbook author and tv host, and when he is not the instructor of the cooking class, other passionate cooks, food writers or food enthusiasts are there to give you a good time and pass on their food knowledge to you. Dates are flexible, and if you are looking for a group event, you can also book a private cooking class.'
                 , "499 DKK", './Pictures/xp9.jpg','./Pictures/Rating1.png','xpSTK3')]
-
-}
+            }
 
 // Load the products
 loadProducts()
