@@ -16,3 +16,4 @@ const generateShopDOM = () => {
 
 // Invoke the generateShopDOM() to render the DOM
 generateShopDOM()
+
