@@ -32,6 +32,8 @@ class User {
   // Bind a counter in order to see if the user has tried to login too many times
   var counter = 3;
   
+
+  //This is the Sign up form
   if (signUp) {
     signUp.onclick = function () {
     // Bind the two input fields and get the value
@@ -40,14 +42,19 @@ class User {
     var inputUsername = document.getElementById('username');
     var inputUserEmail = document.getElementById ('email')
     var inputPassword = document.getElementById('password'); 
+    var inputTerms = document.getElementById ('terms');
   
   if(inputUsername.value.length == 0 || inputPassword.value.length == 0){
     // We set the resultspan with a new text and return false to get out of this function
     resultSpan.innerText = "You need to enter a username and password in order to use our system";
     return false;
-  } 
+    //We make sure that the new user has agreed to terms and conditions
+  } else if (inputTerms.checked == false){
+    resultSpan.innerText = "You need to agree on terms and conditions";
+    return false;
+  }
   
-    // TODO check if username is already registered 
+  // TODO check if username is already registered 
     users.push(new User(inputFirstName.value, inputLastname.value, inputUsername.value, inputUserEmail.value, inputPassword.value));
     localStorage.setItem('users', JSON.stringify(users));
     }
@@ -79,7 +86,6 @@ class User {
           localStorage.setItem('users', JSON.stringify(users));
   
           // We set the resultspan with a new text and return true to get out of this function.
-          // TODO: We wan't something better than unixtime for the user!
           resultSpan.innerText = "Hi " + user.firstname + " " + user.lastname + ", you've successfully entered the system";
           window.location.replace("../Frontpage/purchase.html");
 
