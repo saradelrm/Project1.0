@@ -56,6 +56,7 @@ class User {
   // TODO check if username is already registered 
     users.push(new User(inputFirstName.value, inputLastname.value, inputUsername.value, inputUserEmail.value, inputPassword.value));
     localStorage.setItem('users', JSON.stringify(users));
+    resultSpan.innerText = "You have registered succesfully"
     }
   }
   
