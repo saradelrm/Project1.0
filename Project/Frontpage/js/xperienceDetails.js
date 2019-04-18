@@ -16,6 +16,3 @@ document.getElementById("xp-description").innerText = experience.description
 document.getElementById("xp-price").innerText = experience.price
 document.getElementById("xp-rating").src = experience.rating
 document.getElementById("xp-img").src = experience.img_url // experience.img
-
-
-

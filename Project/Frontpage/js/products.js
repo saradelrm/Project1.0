@@ -1,8 +1,9 @@
+// Initialize the products and cart array
+let products = []
+let cart = []
 /**
  * PRODUCTS
  */
-
-let products = []
 
 // Load the current database of products from localStorage
 const loadProducts = () => {
@@ -25,13 +26,59 @@ const loadProducts = () => {
                 new Xperience('Discover the Nordic kitchen!','Cooking class','Do you want to learn how Swedish people cook? Then you should try a cooking class, and Stockholm has some good ones to offer. Here you can learn how to cook with Scandinavian ingredients, what New Nordic food or fermentation is. You can also learn how to bake the perfect bread with your own sourdough or how to create the juiciest Swedish meatballs. The owner Mark Jonsson is a double Masterchef winner, cookbook author and tv host, and when he is not the instructor of the cooking class, other passionate cooks, food writers or food enthusiasts are there to give you a good time and pass on their food knowledge to you. Dates are flexible, and if you are looking for a group event, you can also book a private cooking class.'
                 , "499 DKK", './Pictures/xp9.jpg','./Pictures/Rating1.png','xpSTK3')]
             }
-
-// Load the products
-loadProducts()
-
 // Function that returns all the products available
 function getAllProducts(){
     return products
 }
 
+// Load the products
+loadProducts()
 
+// Create a function to find a product/item based on it's ID
+// The function should take both the array and ID as inputs
+const findProductById = (data, id) => {
+    const product = data.find((product) => {
+            return product.id === id
+    })
+
+    return product
+}
+
+/**
+ * SHOPPING CART
+ */
+
+// Create a function that adds a product by it's ID and its quantity to the shopping cart
+const addToCart = (id, quant) => {
+    console.log(`${id} has ben added ${quant} times`);
+    if (!findProductById(cart, id)) {
+            cart.push({...findProductById(products, id), quantity: quant})
+    } else {
+            findProductById(cart, id).quantity += quant
+    }
+    saveCart()
+}
+
+// Create a function that loads the cart from localStorage
+const loadCart = function() {
+    if (localStorage.getItem('cart') === null) {
+            cart = []
+    } else {
+            cart = JSON.parse(localStorage.getItem('cart'))
+    }
+
+    // localStorage.getItem('cart') === null ? cart = [] : cart [] = JSON.parse(localStorage.getItem('cart'))
+}
+
+// Create a function that saves your cart to localStorage
+const saveCart = () => {
+    localStorage.setItem('cart', JSON.stringify(cart))
+}
+
+// Create a function that returns the current shopping cart
+const getCart = () => {
+    return cart
+}
+
+// Make sure to load the cart array
+loadCart()
