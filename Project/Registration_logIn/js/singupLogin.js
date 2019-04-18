@@ -31,7 +31,6 @@ class User {
   
   // Bind a counter in order to see if the user has tried to login too many times
   var counter = 3;
-  
 
   //This is the Sign up form
   if (signUp) {
