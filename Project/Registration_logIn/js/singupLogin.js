@@ -1,7 +1,7 @@
 // We create a user class, so we have an easy way to create users and further implement features at a later stage
 class User {
 
-    // The constructor for our class, which will allow us to create new objects of our class
+  // The constructor for our class, which will allow us to create new objects of our class
     constructor(firstname, lastname, username, email, password) {
       this.firstname = firstname;
       this.lastname = lastname;
@@ -9,31 +9,7 @@ class User {
       this.email = email;
       this.password = password;
     }
-  
-
-  
-    // Simple function to hash passwords in order for us not to store them in clear text
-    hashPassword(rawPassword){
-      var a = 1, c = 0, h, o;
-      if (rawPassword) {
-        a = 0;
-        /*jshint plusplus:false bitwise:false*/
-        for (h = rawPassword.length - 1; h >= 0; h--) {
-          o = rawPassword.charCodeAt(h);
-          a = (a<<6&268435455) + o + (o<<14);
-          c = a & 266338304;
-          a = c!==0?a^c>>21:a;
-        }
-      }else {
-        // If the password is not valid, we'll throw and error we're able to catch
-        throw new Error("The password supplied is not valid");
-      }
-      return String(a);
-    }
   }
-  
-  // We set a debug variable in order to switch on or off debug mode of our small program
-  var debug = 1;
   
   var users;
   
@@ -63,19 +39,17 @@ class User {
     var inputLastname = document.getElementById('lastname');
     var inputUsername = document.getElementById('username');
     var inputUserEmail = document.getElementById ('email')
-    var inputPassword = document.getElementById('password');
-    
+    var inputPassword = document.getElementById('password'); 
   
-      if(inputUsername.value.length == 0 || inputPassword.value.length == 0){
-        // We set the resultspan with a new text and return false to get out of this function
-        resultSpan.innerText = "You need to enter a username and password in order to use our system";
-        return false;
-      } 
+  if(inputUsername.value.length == 0 || inputPassword.value.length == 0){
+    // We set the resultspan with a new text and return false to get out of this function
+    resultSpan.innerText = "You need to enter a username and password in order to use our system";
+    return false;
+  } 
   
-      // TODO check if username is already registered 
-  
-      users.push(new User(inputFirstName.value, inputLastname.value, inputUsername.value, inputUserEmail.value, User.prototype.hashPassword(inputPassword.value)));
-      localStorage.setItem('users', JSON.stringify(users));
+    // TODO check if username is already registered 
+    users.push(new User(inputFirstName.value, inputLastname.value, inputUsername.value, inputUserEmail.value, inputPassword.value));
+    localStorage.setItem('users', JSON.stringify(users));
     }
   }
   
@@ -98,25 +72,9 @@ class User {
   
         // Bind user to a variable for easy use
         var user = users[i];
-  
-        // If debug mode is enabled, we console.log the user object from the list
-        if(debug == 1){
-          console.log(user);
-        }
-  
-        // We use a try-catch for the hash-password function, since something could go wrong.
-        try {
-  
-          // We try to create a variable with the hashed version of the inputPassword
-          var hashedInputPassword = user.hashPassword(inputPassword.value);
-        } catch(error){
-  
-          // We console log any error that might have been thrown
-          console.log(error);
-        }
-  
+
         // If username and password we have in put matches the one in our loop
-        if(user.username == inputUsername.value && user.password == hashedInputPassword) {
+        if(user.username == inputUsername.value && user.password == inputPassword.value) {
   
           localStorage.setItem('users', JSON.stringify(users));
   
