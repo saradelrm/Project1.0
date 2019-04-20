@@ -88,7 +88,9 @@ class User {
           // We set the resultspan with a new text and return true to get out of this function.
           resultSpan.innerText = "Hi " + user.firstname + " " + user.lastname + ", you've successfully entered the system";
           window.location.replace("../Frontpage/purchase.html");
-
+        
+          // We show the user that is actually in the session
+          loginUser.innerText = "Hi " + user.firstname;
           // Return true to jump out of the function, since we now have all we need.
           return true;
         }

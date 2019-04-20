@@ -57,7 +57,10 @@
                     <p id= xp-price><b></b></p>
                     
                     <!--here we will take into account the items added to the chart-->
-                    <div><button href="#">Add to cart</button></div> <br><br>
+                    <div>
+                        <input type = "number" class="quantity" min = "1" max ="99" vañue = "1">
+                        <button class = "add-cart-btn" data-id = "${this.id}">Add to cart</button>                    
+                    </div> <br><br>
 
                     <img src="" alt="rating 1" class="img-responsive" id = 'xp-rating'>
                 </div>
@@ -84,9 +87,10 @@
         </div>
     </footer>
 
-    <script src="./js/xperience.js"></script>
-    <script src="./js/products.js"></script>
-    <script src="./js/xperienceDetails.js"></script>
+    <script src="js/xperience.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/xperienceDetails.js"></script>
+    
 
 </body>
 </html>
