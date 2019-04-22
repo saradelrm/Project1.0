@@ -69,8 +69,7 @@ const loadCart = function() {
     } else {
             cart = JSON.parse(localStorage.getItem('cart'))
     }
-
-    // localStorage.getItem('cart') === null ? cart = [] : cart [] = JSON.parse(localStorage.getItem('cart'))
+    
 }
 
 // Create a function that saves your cart to localStorage
@@ -83,8 +82,6 @@ const getCart = () => {
     return cart
 }
 
-
-
 // Create a function that calcualtes the total price of the cart
 const calculteTotal = () => {
     let total = 0
@@ -95,5 +92,6 @@ const calculteTotal = () => {
 
     return total
 }
+
 // Make sure to load the cart array
 loadCart()
