@@ -16,7 +16,6 @@ document.getElementById("xp-description").innerText = experience.description
 document.getElementById("xp-price").innerText = experience.price
 document.getElementById("xp-rating").src = experience.rating
 document.getElementById("xp-img").src = experience.img_url // experience.img
-<<<<<<< HEAD
 
 
 
@@ -36,5 +35,3 @@ for (let i = 0; i < buttons.length; i++) {
 
 
 
-=======
->>>>>>> 615096e6d55d909363bf8116e9759d29b8c6bdf8

@@ -1,22 +1,12 @@
-<<<<<<< HEAD
 //Initialize the cart and products array
 
 let products = []
 let cart = []
 
-=======
-// Initialize the products and cart array
-let products = []
-let cart = []
->>>>>>> 615096e6d55d909363bf8116e9759d29b8c6bdf8
 /**
  * PRODUCTS
  */
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 615096e6d55d909363bf8116e9759d29b8c6bdf8
 // Load the current database of products from localStorage
 const loadProducts = () => {
     products = [new Xperience('Enjoy a day at Serenity Spa!','Spa day','The spa\'s facilities include a jacuzzi, a relaxation area, a sauna, an aromatherapy steam room and a pool looking out over the Danish countryside.You can choose a 60-minute treatment from the treatment menu - we like the sound of the Sensory Body Massage with Hot Stones, the Raindrop Massage or the English Rose Radiance Facial. The Serenity Spa Guide praises the venue\'s "countryside views" and "floor-to-ceiling windows" that "fill the pool and Jacuzzi area with natural light" ' 
@@ -46,10 +36,6 @@ function getAllProducts(){
 // Load the products
 loadProducts()
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 615096e6d55d909363bf8116e9759d29b8c6bdf8
 // Create a function to find a product/item based on it's ID
 // The function should take both the array and ID as inputs
 const findProductById = (data, id) => {
@@ -58,8 +44,8 @@ const findProductById = (data, id) => {
     })
 
     return product
-<<<<<<< HEAD
 }
+
 
 /**
  * SHOPPING CART
@@ -75,7 +61,6 @@ const addToCart = (id, quant) => {
     }
     saveCart()
 }
-
 
 // Create a function that loads the cart from localStorage
 const loadCart = function() {
@@ -97,6 +82,7 @@ const saveCart = () => {
 const getCart = () => {
     return cart
 }
+
 
 
 // Create a function that calcualtes the total price of the cart
@@ -108,45 +94,6 @@ const calculteTotal = () => {
     })
 
     return total
-=======
->>>>>>> 615096e6d55d909363bf8116e9759d29b8c6bdf8
 }
-
-/**
- * SHOPPING CART
- */
-
-// Create a function that adds a product by it's ID and its quantity to the shopping cart
-const addToCart = (id, quant) => {
-    console.log(`${id} has ben added ${quant} times`);
-    if (!findProductById(cart, id)) {
-            cart.push({...findProductById(products, id), quantity: quant})
-    } else {
-            findProductById(cart, id).quantity += quant
-    }
-    saveCart()
-}
-
-// Create a function that loads the cart from localStorage
-const loadCart = function() {
-    if (localStorage.getItem('cart') === null) {
-            cart = []
-    } else {
-            cart = JSON.parse(localStorage.getItem('cart'))
-    }
-
-    // localStorage.getItem('cart') === null ? cart = [] : cart [] = JSON.parse(localStorage.getItem('cart'))
-}
-
-// Create a function that saves your cart to localStorage
-const saveCart = () => {
-    localStorage.setItem('cart', JSON.stringify(cart))
-}
-
-// Create a function that returns the current shopping cart
-const getCart = () => {
-    return cart
-}
-
 // Make sure to load the cart array
 loadCart()
