@@ -1,5 +1,5 @@
 const idCapital = location.hash.substring(1)
-console.log(idCapital)
+//console.log(idCapital)
 
 
 // Create a function to get the products that match the capital where we are located (CPH, OSL, STK) 

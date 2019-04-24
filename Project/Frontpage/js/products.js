@@ -46,14 +46,13 @@ const findProductById = (data, id) => {
     return product
 }
 
-
 /**
  * SHOPPING CART
  */
 
 // Create a function that adds a product by it's ID and its quantity to the shopping cart
 const addToCart = (id, quant) => {
-    console.log(`${id} has ben added ${quant} times`);
+    console.log(`${id} has been added ${quant} times`);
     if (!findProductById(cart, id)) {
             cart.push({...findProductById(products, id), quantity: quant})
     } else {
@@ -61,6 +60,19 @@ const addToCart = (id, quant) => {
     }
     saveCart()
 }
+
+// Create a function that removes a product by it's ID from the shopping cart
+const removeFromCart = (id, index) => {
+    if (findProductById(cart, id).quantity === 1) {
+        cart.splice(index,1)
+    } else {
+        cart[index].quantity--
+    }
+    console.log(`${id} has been removed`);
+    saveCart()
+    generateCartDOM()
+}
+
 
 // Create a function that loads the cart from localStorage
 const loadCart = function() {

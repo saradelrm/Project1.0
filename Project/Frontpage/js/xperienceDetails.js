@@ -23,7 +23,7 @@ document.getElementById("xp-img").src = experience.img_url // experience.img
 // to the addToCart(itemID, quantity)
 const buttons = document.getElementsByClassName('add-cart-btn')
 
-console.log(buttons);
+//console.log(buttons);
 
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', (event) => {

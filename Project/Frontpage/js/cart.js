@@ -4,3 +4,5 @@ generateCartDOM()
 
 // 2. Calculate the total Cart price
 calculteTotal()
+
+

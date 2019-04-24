@@ -1,3 +1,5 @@
+console.log('cartview')
+
 /**
  * CART VIEW
  */
@@ -33,4 +35,26 @@ const generateCartDOM = () => {
     html += `<tr><td>Total:</td><td id="total">${calculteTotal().toFixed(2)} DKK.</td></tr>`
 
     shoppingCart.innerHTML = html
+    addRemoveButton()
 }
+
+
+function addRemoveButton() {
+    //Add an event listener for the remove button
+    const buttons = document.getElementsByClassName('remove-cart-btn')
+    console.log(buttons.length)
+    
+    for (let i = 0; i < buttons.length; i++) {
+        console.log(buttons[i])
+    }
+    
+    
+    for (let i = 0; i < buttons.length; i++) {
+        console.log('loop')
+        buttons[i].addEventListener('click', (event) => {
+            console.log('clicked')
+            removeFromCart(buttons[i].dataset.id, i)
+        })
+    }
+}
+
