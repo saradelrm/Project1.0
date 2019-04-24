@@ -50,18 +50,27 @@ const findProductById = (data, id) => {
  * SHOPPING CART
  */
 
+//Function for alerting when adding products in the cart
+function productAdded(id,quant) {
+    alert(`${id} has been added ${quant} times`);
+    }
+
 // Create a function that adds a product by it's ID and its quantity to the shopping cart
 const addToCart = (id, quant) => {
     console.log(`${id} has been added ${quant} times`);
     if (!findProductById(cart, id)) {
             cart.push({...findProductById(products, id), quantity: quant})
     } else {
-            findProductById(cart, id).quantity += quant
+            findProductById(cart, id).quantity += quant       
     }
+
+//We send an alert informing of the product being added to the cart
+    productAdded(id,quant)
     saveCart()
 }
 
 // Create a function that removes a product by it's ID from the shopping cart
+// We delete experiences one by one and remove the line in case we go below 1
 const removeFromCart = (id, index) => {
     if (findProductById(cart, id).quantity === 1) {
         cart.splice(index,1)

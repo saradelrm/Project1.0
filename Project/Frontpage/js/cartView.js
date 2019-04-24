@@ -38,8 +38,9 @@ const generateCartDOM = () => {
     addRemoveButton()
 }
 
+//Here we check all the remove buttons we have in the code according to the items in the cart 
 
-function addRemoveButton() {
+function addRemoveButton() {                        
     //Add an event listener for the remove button
     const buttons = document.getElementsByClassName('remove-cart-btn')
     console.log(buttons.length)
@@ -47,8 +48,7 @@ function addRemoveButton() {
     for (let i = 0; i < buttons.length; i++) {
         console.log(buttons[i])
     }
-    
-    
+      
     for (let i = 0; i < buttons.length; i++) {
         console.log('loop')
         buttons[i].addEventListener('click', (event) => {
