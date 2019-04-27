@@ -29,9 +29,29 @@
                     </div>
                 
             </div>
+            <div>
+                    <!--Funtion for calculating the total of the shopping cart-->
+                        <script>
+                            function cartTotal(){
+                            let basket = []
+                            let total = 0
+                            basket = JSON.parse(localStorage.getItem('cart'))
+                            basket.forEach((basket) => {
+                            total += basket.quantity
+                             })
+                            return total.toString()
+                            }
+                        </script>
+    
+                    </div>
+    
                 <div class="basket-shop">
-                        <a href="./cart.html"><img src="Pictures/Basket.png" alt="Basket shop icon" ></a>
-                        <span> Basket (0)</span> <!-- span used to wrap small portions of text --> 
+                    <a href="./cart.html"><img src="Pictures/Basket.png" alt="Basket shop icon" ></a>
+                    <span> Basket (
+                        <script type="text/javascript">
+                        document.write(cartTotal())
+                        </script> )
+                    </span> <!-- span used to wrap small portions of text --> 
                 </div>
             </nav>
     </header>

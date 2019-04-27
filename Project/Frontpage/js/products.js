@@ -58,6 +58,8 @@ function productAdded(id,quant) {
 // Create a function that adds a product by it's ID and its quantity to the shopping cart
 const addToCart = (id, quant) => {
     console.log(`${id} has been added ${quant} times`);
+    //Show the current state of cart
+    console.log(cart)
     if (!findProductById(cart, id)) {
             cart.push({...findProductById(products, id), quantity: quant})
     } else {
@@ -67,6 +69,7 @@ const addToCart = (id, quant) => {
 //We send an alert informing of the product being added to the cart
     productAdded(id,quant)
     saveCart()
+    location.reload();
 }
 
 // Create a function that removes a product by it's ID from the shopping cart
