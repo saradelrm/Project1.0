@@ -18,7 +18,7 @@ return productCapital
 }
 
 class Xperience {
-    constructor(title, name, description, price, img_url, rating, id) 
+    constructor(title, name, description, price, img_url, rating, id, review) 
     {
         this.title = title,
         this.name = name,
@@ -26,7 +26,8 @@ class Xperience {
         this.price = price,
         this.img_url = img_url,
         this.rating = rating,
-        this.id = id
+        this.id = id,
+        this.review =review
     }
 
 // Create a method that renders the xperience's HTML structure with dynamic data
