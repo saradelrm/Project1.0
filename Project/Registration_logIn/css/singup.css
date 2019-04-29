@@ -58,9 +58,23 @@ input[type=button]:hover{
 h2{
     color: white;
 }
-
-::placeholder{                  /* Set the color of the placeholder text*/
-    color: aliceblue;
-    opacity: 0.8;
+a{
+    color: yellow;
+    text-decoration:  blink;
 }
 
+a:hover{
+    color: rgb(29, 2, 80);
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+}
+
+::placeholder{               /* Set the color of the placeholser text*/
+    color: aliceblue;
+    opacity: 0.8; 
+}
