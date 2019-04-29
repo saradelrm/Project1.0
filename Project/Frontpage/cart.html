@@ -33,25 +33,28 @@
     </header>
 
     <h1>Shopping Cart</h1>
+    <!--definition of the cart headings-->
     <h2 id="cart-summary"></h2>
 
 <div>
+    <!--table for showing the cart contents-->
     <table>
         <thead>
-            <tr>
-                <th>Name:</th>
+            <tr> <!--tr defines a row in a table-->
+                <th>Name:</th> <!--th defines a header in a table-->
                 <th>Price:</th>
                 <th>Quantity:</th>
             </tr>
         </thead>
-
+<!--generated cart data associated with id (CHECK THIS)-->
         <tbody id="cart-content">
 
         </tbody>
     </table>
 </div>
-
+<!--adding a back button and the specific location (index)-->
     <button id="back-btn" onclick="location.href= 'index.html'">Go back to shop</button>
+<!--adding a log in and pay button which takes you to the log in page-->
     <button id="Login-btn" onclick="location.href= '../Registration_logIn/login.html'">Login and pay</button>
 <br>
 
@@ -63,7 +66,8 @@
         </div>
     </footer>
 
-
+    <!--The script src attribute specifies the URL of an external script file.
+    In this case we are using 4 different ones to generate the correspondong content-->
     <script src="js/xperience.js"></script>
     <script src="js/products.js"></script>
     <script src="js/cartView.js"></script>
