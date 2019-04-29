@@ -1,9 +1,10 @@
+//the variable idCapital gets the hash of the link 
 const idCapital = location.hash.substring(1)
 //console.log(idCapital)
 
 
 // Create a function to get the products that match the capital where we are located (CPH, OSL, STK) 
-// Looping through all the products until it find the ones matching the capital URL above 
+// Looping through all the products until it finds the ones matching the capital URL/ID above 
 function getProducts() {
     var productCapital = []
    
@@ -13,11 +14,10 @@ function getProducts() {
            console.log (productCapital)
     }
    }
-    
-return productCapital
+    return productCapital
 }
 
-class Xperience {
+class Xperience { //defining the class xperience
     constructor(title, name, description, price, img_url, rating, id, review) 
     {
         this.title = title,
@@ -30,7 +30,7 @@ class Xperience {
         this.review =review
     }
 
-// Create a method that renders the xperience's HTML structure with dynamic data
+// method that renders the xperience's HTML structure with dynamic data
     renderHTML() {
         return `<tr>
                         <td>

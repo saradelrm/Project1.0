@@ -65,7 +65,7 @@
 <!-- SECTION #1
 main text portion of the page-->    
     <section id="place-1">
-        <div class="container">
+        <div class="container"> <!--A container provides equality for all HTML container elements (margins, fonts, color etc)-->
             <div class="row"> <!--rows divide the text into equal columns, ensuring it is aligned-->
                 <div class="col-md-6 places-text">
                     <h2>Buy the best experiences to enjoy the nordic cities!</h2>
@@ -93,7 +93,7 @@ image showing how our page works-->
                 <div class="row">
                     <div class="col">
                         <h2> How it works?</h2>
-                        <img src="Pictures/Howitworks.png" alt="Beautiful houses"  class = "img-responsive">
+                        <img src="Pictures/Howitworks.png" alt="How it works"  class = "img-responsive"> <!--Responsive images automatically adjust to fit the size of the screen-->
                     </div>
                 </div>
             </div>
@@ -111,6 +111,8 @@ image showing how our page works-->
                         <p>Keep up with all our amazing new experiencies each week by subscribing to our Newsletter!</p>
 
                         <form>
+                            <!--The <form> tag is used to create an HTML form for user input, 
+                                and the placeholder shows what is displayed on the screen-->
                             <input type="email" placeholder = "Your email address">
                             <button onclick="newsletterSubscription()">Subscribe</button> 
                             <!--JS function for alert box after subsscribing-->
