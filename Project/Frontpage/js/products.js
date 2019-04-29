@@ -51,12 +51,12 @@ const findProductById = (data, id) => {
  */
 
 //Function for alerting when adding products in the cart
-function productAdded(id,quant) {
-    alert(`${id} has been added ${quant} times`);
+function productAdded(quant, name) {
+    alert( `${name} has been added ${quant} times`);
     }
 
 // Create a function that adds a product by it's ID and its quantity to the shopping cart
-const addToCart = (id, quant) => {
+const addToCart = (id, quant, name) => {
     console.log(`${id} has been added ${quant} times`);
     //Show the current state of cart
     console.log(cart)
@@ -66,9 +66,11 @@ const addToCart = (id, quant) => {
             findProductById(cart, id).quantity += quant       
     }
 
-//We send an alert informing of the product being added to the cart
-    productAdded(id,quant)
+//Show an alert informing of the product being added to the cart and how many times it has been added
+    productAdded(quant, name)
     saveCart()
+
+//Reload the browser so the html script is up to date
     location.reload();
 }
 

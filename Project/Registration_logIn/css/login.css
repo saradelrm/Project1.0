@@ -6,7 +6,7 @@ body
     background-size: cover;
 }
 .signin{
-    background: rgba(44,62,80,0.7);
+    background: rgba(66, 64, 64, 0.7);
     padding: 40px;
     width: 250px;
     margin: auto;
@@ -62,7 +62,7 @@ a{
 }
 
 a:hover{
-    color: skyblue;
+    color: rgb(29, 2, 80);
 }
 
 .container{
