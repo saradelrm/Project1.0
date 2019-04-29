@@ -1,8 +1,8 @@
 
-// 1. Generate the Cart DOM structure
+// Invoke the fucntion in order to Generate the Cart DOM structure
 generateCartDOM()
 
-// 2. Calculate the total Cart price
+// Invoke the function in order to Calculate the total Cart price
 calculteTotal()
 
 

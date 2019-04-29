@@ -1,4 +1,4 @@
-//Initialize the cart and products array
+//Initialize the cart and products as empty arrays
 
 let products = []
 let cart = []
@@ -8,6 +8,7 @@ let cart = []
  */
 
 // Load the current database of products from localStorage
+//for each product we have a class that was defined in the file xperience.js
 const loadProducts = () => {
     products = [new Xperience('Enjoy a day at Serenity Spa!','Spa day','The spa\'s facilities include a jacuzzi, a relaxation area, a sauna, an aromatherapy steam room and a pool looking out over the Danish countryside.You can choose a 60-minute treatment from the treatment menu - we like the sound of the Sensory Body Massage with Hot Stones, the Raindrop Massage or the English Rose Radiance Facial. The Serenity Spa Guide praises the venue\'s "countryside views" and "floor-to-ceiling windows" that "fill the pool and Jacuzzi area with natural light" ' 
                 ,999, './Pictures/xp1.jpg', './Pictures/Rating1.png','xpCPH1','"Amazing experience, highly recommend! - John, New York"'),
@@ -33,17 +34,17 @@ function getAllProducts(){
     return products
 }
 
-// Load the products
+// funtion to load the products 
 loadProducts()
 
-// Create a function to find a product/item based on it's ID
-// The function should take both the array and ID as inputs
+//function to find a product based on it's ID
+// the function takes both the array and ID as inputs
 const findProductById = (data, id) => {
     const product = data.find((product) => {
             return product.id === id
     })
 
-    return product
+    return product //the funtion will return the product
 }
 
 /**
@@ -55,15 +56,15 @@ function productAdded(id,quant) {
     alert(`${id} has been added ${quant} times`);
     }
 
-// Create a function that adds a product by it's ID and its quantity to the shopping cart
+// addToCart is a function that adds a product by it's  ID and its quantity to the shopping cart
 const addToCart = (id, quant) => {
     console.log(`${id} has been added ${quant} times`);
     //Show the current state of cart
     console.log(cart)
     if (!findProductById(cart, id)) {
-            cart.push({...findProductById(products, id), quantity: quant})
+            cart.push({...findProductById(products, id), quantity: quant}) //if the product is not found in the cart then we show the quantity that was selected
     } else {
-            findProductById(cart, id).quantity += quant       
+            findProductById(cart, id).quantity += quant       //otherwise we increase the quantity of the product with the new chosen quantity
     }
 
 //We send an alert informing of the product being added to the cart
@@ -82,7 +83,7 @@ const removeFromCart = (id, index) => {
     }
     console.log(`${id} has been removed`);
     saveCart()
-    generateCartDOM()
+    generateCartDOM() //invoke the function to generate the new cart 
 }
 
 
@@ -96,17 +97,17 @@ const loadCart = function() {
     
 }
 
-// Create a function that saves your cart to localStorage
+// function that saves the cart to localStorage
 const saveCart = () => {
     localStorage.setItem('cart', JSON.stringify(cart))
 }
 
-// Create a function that returns the current shopping cart
+// function that returns the current shopping cart
 const getCart = () => {
     return cart
 }
 
-// Create a function that calcualtes the total price of the cart
+// function that calculates the total price of the cart
 const calculteTotal = () => {
     let total = 0
 

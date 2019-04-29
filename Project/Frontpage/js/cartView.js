@@ -24,10 +24,10 @@ const generateCartDOM = () => {
 
     let html = ''
 
-    if (cart.length === 0) {
-        html = '<h3>No items in shopping cart!</h3>'
+    if (cart.length === 0) { //checking if the length of the array is 0 or not and displaying a message
+        html = '<h3>No items in shopping cart!</h3>' 
     } else {
-        cart.forEach((item) => {
+        cart.forEach((item) => { //in case the cart is not empty the code will render the elements of the cart 
             html += renderCartElement(item)
         })
     }
@@ -38,7 +38,7 @@ const generateCartDOM = () => {
     addRemoveButton()
 }
 
-//Here we check all the remove buttons we have in the code according to the items in the cart 
+//checking all the remove buttons we have in the code according to the items in the cart 
 
 function addRemoveButton() {                        
     //Add an event listener for the remove button
