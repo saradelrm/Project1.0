@@ -6,20 +6,24 @@
                                  at the width of its own screen--> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!--this will be written in the tab at the top of the page-->
 <title>Experience web</title>
 
+<!--in this document we are using the style.css file for all the styling-->
 <link href = "style.css" rel= "stylesheet" type = "text/css">
 
 </head>
 
 <body>
     <header>
-        <nav>
-            <div class= "container"> <!--divs should be used to wrap sections of a document-->
+        <nav> <!--The <nav> tag defines a set of navigation links-->
+            <div class= "container"> <!--divs should be used to group sections of a document-->
                 <div class="text-content">
+                    <!--the headline of our page-->
                         <h1> Xperience Nordic</h1>   
                 </div>
               <div>
+                  <!--defining our menu buttons and adding corresponding links to html pages-->
                     <ul class="menu">   
                         <li><a href="index.html">Home</a></li>     
                         <li><a href="CPH.html#CPH">Copenhagen</a></li>
@@ -31,26 +35,26 @@
             
         </div>
         <div>
-                <!--Funtion for calculating the total of the shopping cart-->
+                <!--JS Function for calculating the total of the shopping cart in the upper corner-->
                     <script>
-                        function cartTotal(){
+                        function cartTotal(){   // function for calculating total items in basket 
                         let basket = []
                         let total = 0
-                        basket = JSON.parse(localStorage.getItem('cart'))
-                        basket.forEach((basket) => {
-                        total += basket.quantity
+                        basket = JSON.parse(localStorage.getItem('cart'))   // gets value from local storage
+                        basket.forEach((basket) => {                        // for each element in the basket
+                        total += basket.quantity                            // gets the quantity and adds to the total amount
                          })
-                        return total.toString()
+                        return total.toString()                             // returns total in string form
                         }
                     </script>
 
                 </div>
-
+<!--basket icon-->
             <div class="basket-shop">
                 <a href="./cart.html"><img src="Pictures/Basket.png" alt="Basket shop icon" ></a>
                 <span> Basket (
                     <script type="text/javascript">
-                    document.write(cartTotal())
+                    document.write(cartTotal())                             // calls the function from above showing cart total
                     </script> )
                 </span> <!-- span used to wrap small portions of text --> 
             </div>
@@ -58,10 +62,11 @@
 </header>
 
 
-<!-- SECTION #1-->    
+<!-- SECTION #1
+main text portion of the page-->    
     <section id="place-1">
         <div class="container">
-            <div class="row">
+            <div class="row"> <!--rows divide the text into equal columns, ensuring it is aligned-->
                 <div class="col-md-6 places-text">
                     <h2>Buy the best experiences to enjoy the nordic cities!</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -81,7 +86,8 @@
         </div>  
     </section> 
     
-<!-- SECTION #2-->
+<!-- SECTION #2
+image showing how our page works-->
     <section id= "place-2">
             <div class="container">
                 <div class="row">
@@ -106,9 +112,10 @@
 
                         <form>
                             <input type="email" placeholder = "Your email address">
-                            <button onclick="myFunction()">Subscribe</button>
-                        <script>
-                        function myFunction() {
+                            <button onclick="newsletterSubscription()">Subscribe</button> 
+                            <!--JS function for alert box after subsscribing-->
+                        <script> 
+                        function newsletterSubscription() { 
                         alert("Thank you for subscribing!");
                         }
                         </script>
@@ -128,10 +135,6 @@
            
     </div>
 </footer>
-
-<script src="..\Registration_logIn\js\signupLogin.js"></script>
-<script src="js/xperience.js"></script>
-<script src="js/products.js"></script>
 
 
 </body>
