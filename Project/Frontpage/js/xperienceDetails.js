@@ -7,6 +7,7 @@ const experiences = getAllProducts()
 //console.log(experiences)
 
 const experience = experiences.find(function (experience) { //running the find function for experiences
+    return experience.id === id
 }) 
 
 //console.log(experience.name)
