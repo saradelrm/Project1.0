@@ -34,18 +34,18 @@
                 
             </div>
             <div>
-                    <!--Funtion for calculating the total of the shopping cart-->
-                        <script>
-                            function cartTotal(){
-                            let basket = []
-                            let total = 0
-                            basket = JSON.parse(localStorage.getItem('cart'))
-                            basket.forEach((basket) => {
-                            total += basket.quantity
-                             })
-                            return total.toString()
-                            }
-                        </script>
+             <!--JS Function for calculating the total of the shopping cart in the upper corner-->
+             <script>
+                    function cartTotal(){   // function for calculating total items in basket 
+                    let basket = []
+                    let total = 0
+                    basket = JSON.parse(localStorage.getItem('cart'))   // gets value from local storage
+                    basket.forEach((basket) => {                        // for each element in the basket
+                    total += basket.quantity                            // gets the quantity and adds to the total amount
+                     })
+                    return total.toString()                             // returns total in string form
+                    }
+                </script>
     
                     </div>
     
@@ -65,9 +65,9 @@
 <!-- XPERIENCIES-->
    <section id = "xperiencies">
         <div class="container">
-            <div class="row">
+            <div class="row"> <!--rows divide the text into equal columns, ensuring it is aligned-->
                 <div class="col">
-                    <h2>XPERIENCES AVAILIBLE</h2>
+                    <h2>XPERIENCES AVAILABLE</h2>
                     <p>This are all the experiences that you can enjoy</p>
                 </div>
             </div>
@@ -80,14 +80,16 @@
                     <th></th>
                     <th>Price:</th>
                 </tr>
-            </thead>
+            </thead>  <!--draws content from JS catalog according to the city-->
             <tbody id="xperience-catalog">
                     
             </tbody>
         </table>
     </div>
     </section>
-    
+   
+        <!--The script src attribute specifies the URL of an external script file.
+    In this case we are using 3 different ones to generate the correspondong content-->
     <script src="js/xperience.js"></script>
     <script src="js/products.js"></script>
     <script src="js/catalogView.js"></script>
