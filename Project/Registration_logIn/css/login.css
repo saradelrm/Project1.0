@@ -1,12 +1,27 @@
+/* VARIABLES----------------------
+---------------------------------*/
+:root {
+    --titleColor: #3c3c3c;
+    --textColor: #6a6a6a;
+}
+
+/* BODY -----------------
+ ------------------------------*/
+
 body
 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #ffffff;
+    font-family: "Ubuntu", Arial, Helvetica, sans-serif;
+    font-weight: 300; /*We make it light*/
+    font-size: 16px;
+    line-height: 26px; 
+    color: white;   
+    background-color: #dcdcdc;
     background: url(../pictures/scandinavianWater.jpg);
     background-size: cover;
 }
+
 .signin{
-    background: rgba(66, 64, 64, 0.7);
+    background: rgba(43, 43, 33, 0.7);
     padding: 40px;
     width: 250px;
     margin: auto;
@@ -37,25 +52,31 @@ input{
 }
 
 input[type=button]{
+    background-color: var(--titleColor);
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding: 15px 25px;
     border: none;
-    width: 190px;
-    background: white;
-    color: #000;
-    font-size: 16px;
-    line-height: 20px;
-    padding: 10px 0;
-    border-radius: 15px;
+    font-size: 14px;
     cursor: pointer;
+    transition: background-color .3s;
 }
 
 input[type=button]:hover{
-    color: #ffffff;
-    background-color: black;
+    background-color: var(--textColor);    
+
 }
 
-h2{
-    color: white;
+h2
+{
+    font-family: "Playfair Display", Georgia, 'Times New Roman', Times, serif;
+    color: var(--titleColor);
+    font-size: 38px;
+    line-height: 48px;
 }
+
 a{
     color: yellow;
     text-decoration:  blink;
