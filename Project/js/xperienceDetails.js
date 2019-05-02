@@ -33,7 +33,6 @@ const experiences = getAllProducts()
             buttons[i].addEventListener('click', (event) => {
                 let quantity = buttons[i].previousElementSibling.value
                 addToCart(experience.id, Number(quantity), experience.name)
-                totalAmount = cartTotal()
             })
         }
 

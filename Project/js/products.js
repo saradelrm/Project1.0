@@ -2,6 +2,7 @@
 
 let products = []
 let cart = []
+let orders = []
 
 /**
  * PRODUCTS
@@ -122,3 +123,6 @@ const calculteTotal = () => {
 
 // Make sure to load the cart array
 loadCart()
+
+
+
