@@ -32,28 +32,14 @@
                         </ul>
                     </div>
                 
-            </div>
-            <div>
-             <!--JS Function for calculating the total of the shopping cart in the upper corner-->
-             <script>
-                    function cartTotal(){   // function for calculating total items in basket 
-                    let basket = []
-                    let total = 0
-                    basket = JSON.parse(localStorage.getItem('cart'))   // gets value from local storage
-                    basket.forEach((basket) => {                        // for each element in the basket
-                    total += basket.quantity                            // gets the quantity and adds to the total amount
-                     })
-                    return total.toString()                             // returns total in string form
-                    }
-                </script>
-    
-                    </div>
-    
+            </div>   
                 <div class="basket-shop">
                     <a href="./cart.html"><img src="Pictures/Basket.png" alt="Basket shop icon" ></a>
                     <span> Basket (
+                         <!-- Location of the js function we need for the shoping cart-->
+                        <script type="text/javascript" src="js/purchase.js"></script>
                         <script type="text/javascript">
-                        document.write(cartTotal())
+                        document.write(cartTotal());                             // calls the function from above showing cart total
                         </script> )
                     </span> <!-- span used to wrap small portions of text --> 
                 </div>

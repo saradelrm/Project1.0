@@ -70,9 +70,6 @@ const addToCart = (id, quant, name) => {
 //Show an alert informing of the product being added to the cart and how many times it has been added
     productAdded(quant, name)
     saveCart()
-
-//Reload the browser so the html script is up to date
-    location.reload();
 }
 
 // Create a function that removes a product by it's ID from the shopping cart
