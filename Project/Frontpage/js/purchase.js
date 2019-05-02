@@ -1,4 +1,3 @@
-
 //Function for calculating the total of the shopping cart
 function cartTotal(){   // function for calculating total items in basket 
     let basket = []
@@ -9,11 +8,7 @@ function cartTotal(){   // function for calculating total items in basket
      })
     return total.toString()                             // returns total in string form
 }
+let totalAmount = cartTotal()
 
-const getItem = document.getElementsByClassName('add-cart-btn')
 
-for (let i = 0; i < getItem.length; i++) {
-    getItem[i].addEventListener('click', (event) => {
-        cartTotal()
-    })
-}
+
