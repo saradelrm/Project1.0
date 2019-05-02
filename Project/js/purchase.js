@@ -11,14 +11,15 @@ function cartTotal(){   // function for calculating total items in basket
 let totalAmount = cartTotal()
 
 
-function clearUserCart (){
-    localStorage.setItem('cart', JSON.stringify([]))
-}
+
 
 const homeB = document.getElementsByClassName('home-btn')
 
-//on the click of the button the variable quantity will invoke the function addToCart
-for (let i = 0; i < homeB.length; i++) {
-    homeB[i].addEventListener('click', clearUserCart() )
-}
+//Event listener, once the user clicks for returning home after purchase
+//the local storage of the cart clears up
 
+for (let i = 0; i < homeB.length; i++) {
+    homeB[i].addEventListener('click', (event) => {
+        localStorage.setItem('cart', JSON.stringify([]))
+    })
+}
