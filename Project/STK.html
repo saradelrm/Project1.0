@@ -1,7 +1,6 @@
 <!--
     Here we generate a site per city and show the availible catalog
 -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,17 +9,17 @@
                                  at the width of its own screen--> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Oslo</title>
+<title>Stockholm</title>
 
-<link href = "CPH.css" rel= "stylesheet" type = "text/css">  
+<link href = "css/CPH.css" rel= "stylesheet" type = "text/css">  
 
 </head>
 <body>
     <header>
-            <nav> <!--The <nav> tag defines a set of navigation links-->
+            <nav>
                 <div class= "container"> <!--divs should be used to wrap sections of a document-->
                     <div class="text-content">
-                            <h1> Oslo</h1>   
+                            <h1> Stockholm</h1>   
                     </div>
 
                     <div>
@@ -33,14 +32,14 @@
                         </ul>
                     </div>
                 
-            </div>
+            </div>   
                 <div class="basket-shop">
-                    <a href="./cart.html"><img src="Pictures/Basket.png" alt="Basket shop icon" ></a>
+                    <a href="cart.html"><img src="pictures/Basket.png" alt="Basket shop icon" ></a>
                     <span> Basket (
                          <!-- Location of the js function we need for the shoping cart-->
                         <script type="text/javascript" src="js/purchase.js"></script>
                         <script type="text/javascript">
-                        document.write(totalAmount);            // calls the global variable that contains the cart total
+                        document.write(totalAmount);                   // calls the global variable that contains the cart total
                         </script> )
                     </span> <!-- span used to wrap small portions of text --> 
                 </div>
@@ -55,7 +54,7 @@
             <div class="row"> <!--rows divide the text into equal columns, ensuring it is aligned-->
                 <div class="col">
                     <h2>XPERIENCES AVAILABLE</h2>
-                    <p>These are all the experiences that you can enjoy</p>
+                    <p>This are all the experiences that you can enjoy</p>
                 </div>
             </div>
 
@@ -74,7 +73,7 @@
         </table>
     </div>
     </section>
-    
+   
         <!--The script src attribute specifies the URL of an external script file.
     In this case we are using 3 different ones to generate the correspondong content-->
     <script src="js/xperience.js"></script>

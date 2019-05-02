@@ -1,0 +1,90 @@
+<!--
+    Here we generate a site per city and show the availible catalog
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+                            <!-- The browser will render the width of the page
+                                 at the width of its own screen--> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Copenhagen</title>
+
+<link href = "css/CPH.css" rel= "stylesheet" type = "text/css">  
+
+</head>
+<body>
+    <header>
+            <nav> <!--The <nav> tag defines a set of navigation links-->
+                <div class= "container"> <!--A container provides equality for all HTML container elements (margins, fonts, color etc)-->
+                    <!--divs should be used to group sections of a document-->
+                    <div class="text-content">
+                            <h1> Copenhagen</h1>   
+                    </div>
+
+                    <div>
+                        <ul class="menu">   
+                            <li><a href="index.html">Home</a></li>     
+                        <li><a href="CPH.html#CPH">Copenhagen</a></li>
+                        <li><a href="OSL.html#OSL">Oslo</a></li>
+                        <li><a href="STK.html#STK">Stockholm</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                
+            </div>
+
+            <div class="basket-shop">
+                <a href="cart.html"><img src="pictures/Basket.png" alt="Basket shop icon" ></a>
+                <span> Basket (
+                     <!-- Location of the js function we need for the shoping cart-->
+                    <script type="text/javascript" src="js/purchase.js"></script>
+                    <script type="text/javascript">
+                    document.write(totalAmount);                             // calls the global variable that contains the cart total
+                    </script> )
+                </span> <!-- span used to wrap small portions of text --> 
+            </div>
+
+            </nav>
+    </header>
+        
+
+
+<!-- XPERIENCIES-->
+   <section id = "xperiencies">
+        <div class="container">
+            <div class="row"> <!--rows divide the text into equal columns, ensuring it is aligned-->
+                <div class="col">
+                    <h2>XPERIENCES AVAILABLE</h2>
+                    <p>This are all the experiences that you can enjoy</p>
+                </div>
+            </div>
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Price:</th>
+                </tr>
+            </thead>
+            <!--draws content from JS catalog according to the city-->
+            <tbody id="xperience-catalog">
+                    
+            </tbody>
+        </table>
+    </div>
+    </section>
+    
+    <!--The script src attribute specifies the URL of an external script file.
+    In this case we are using 3 different ones to generate the correspondong content-->
+    <script src="js/xperience.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/catalogView.js"></script>
+
+    </body>
+</html>
+

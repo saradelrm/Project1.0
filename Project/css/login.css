@@ -1,0 +1,99 @@
+/* VARIABLES----------------------
+---------------------------------*/
+:root {
+    --titleColor: #3c3c3c;
+    --textColor: #6a6a6a;
+}
+
+/* BODY -----------------
+ ------------------------------*/
+
+body
+{
+    font-family: "Ubuntu", Arial, Helvetica, sans-serif;
+    font-weight: 300; /*We make it light*/
+    font-size: 16px;
+    line-height: 26px; 
+    color: white;   
+    background-color: #dcdcdc;
+    background: url(../pictures/scandinavianWater.jpg);
+    background-size: cover;
+}
+
+.signin{
+    background: rgba(43, 43, 33, 0.7);
+    padding: 40px;
+    width: 250px;
+    margin: auto;
+    margin-top: 80px;
+    height: 400px;
+    margin-left: 180x;
+
+}
+
+form{
+    width: 240px;
+    text-align: center;
+}
+
+input{
+    width: 240px;
+    text-align: center;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    font-family: 'Play', sans-serif;
+    font-size: 16px;
+    font-weight: 200px;
+    padding: 10px 0;
+    transition: border 0.5s;
+    outline: none;
+    color: #ffffff;
+}
+
+input[type=button]{
+    background-color: var(--titleColor);
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding: 15px 25px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+input[type=button]:hover{
+    background-color: var(--textColor);    
+
+}
+
+h2
+{
+    font-family: "Playfair Display", Georgia, 'Times New Roman', Times, serif;
+    color: var(--titleColor);
+    font-size: 38px;
+    line-height: 48px;
+}
+
+a{
+    color: yellow;
+    text-decoration:  blink;
+}
+
+a:hover{
+    color: rgb(29, 2, 80);
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+}
+
+::placeholder{               /* Set the color of the placeholser text*/
+    color: aliceblue;
+    opacity: 0.8; 
+}

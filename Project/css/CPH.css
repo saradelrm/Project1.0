@@ -11,7 +11,7 @@
  {
     width: 100%;
     height: 100vh; /* So it covers the whole page*/
-    background-image: linear-gradient(to top right, rgba(60,60,60,.7), rgba(76,76,76,.7)), url(Pictures/CPH.jpg);
+    background-image: linear-gradient(to top right, rgba(60,60,60,.7), rgba(76,76,76,.7)), url(../pictures/CPH.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

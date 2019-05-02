@@ -1,0 +1,384 @@
+/* VARIABLES----------------------
+---------------------------------*/
+:root {
+    --titleColor: #3c3c3c;
+    --textColor: #6a6a6a;
+}
+/* HEADER -----------------
+ ------------------------------*/
+
+ header
+ {
+    width: 100%;
+    height: 100vh; /* So it covers the whole page*/
+    background-image: linear-gradient(to top right, rgba(60,60,60,.7), rgba(76,76,76,.7)), url(../pictures/signup.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    height: 300px;
+}
+
+header .text-content {
+
+    margin-top: 150px;
+    text-align: center;
+}
+
+header .text-content h1
+{
+    margin-bottom: 20px;
+    color: white;
+}
+
+header .text-content p
+{
+    font-size: 20px;
+    color: rgba(255,255,255,.8);
+    margin-bottom: 30px;
+}
+
+/* GENERAL STYLE----------------------
+---------------------------------*/
+body
+{
+    font-family: "Ubuntu", Arial, Helvetica, sans-serif;
+    font-weight: 300; /*We make it light*/
+    font-size: 16px;
+    line-height: 26px; 
+    color: var (--textColor);   
+    background-color: #dcdcdc;
+}
+
+h1,h2,h3,h4,h5,h6 
+{
+    font-family: "Playfair Display", Georgia, 'Times New Roman', Times, serif;
+    color: var(--titleColor);
+}
+
+h1
+{
+    font-size: 48px;
+    line-height: 58px;
+}
+
+h2
+{
+    font-size: 38px;
+    line-height: 48px;
+}
+
+h3
+{
+    font-size: 28px;
+    line-height: 38px;
+}
+
+.img-responsive 
+ {
+     width: 50%;
+     height: auto;
+ }
+
+ .btn:link,
+ .btn:visited
+ {
+    background-color: var(--titleColor);
+    color: white;
+    text-decoration: none;      /* We erase the underline from links*/
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding: 15px 25px;
+    font-size: 14px;
+    transition: background-color .3s;
+ }
+
+ .btn:hover,
+ .btn:active
+ {
+    background-color: var(--textColor);
+ }
+
+.col-md-3{
+    -ms-flex:0 0 25%;
+    flex:0 0 25%;
+    max-width:25%;
+    position:relative;
+    width:100%;
+    min-height:1px;
+    padding-right:15px;
+    padding-left:15px 
+}
+
+.col-md-6{
+    -ms-flex:0 0 50%;
+    flex:0 0 50%;
+    max-width:50%
+}
+
+.col {
+    -ms-flex-preferred-size:0;
+    flex-basis:0;
+    -ms-flex-positive:1;
+    flex-grow:1;
+    max-width:100%;
+}
+.row {
+    margin: 40 auto;
+    display:flex;
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap;
+    margin-right:35px;
+    margin-left:35px;
+}
+
+
+ /* NAVIGATION -----------------
+ ------------------------------*/
+
+ nav{
+    padding: 20px 0px;
+    display: fex; /*We align items that are in the middle of nav in the centre*/
+    align-items: center;
+ }
+
+nav ul.menu
+{
+    margin-top: 20px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul.menu li:not(:last-child)
+{
+    margin-right: 50px;
+}
+
+nav ul.menu li a:link,
+nav ul.menu li a:visited
+{
+    font-size: 15px;
+    color:white;
+    text-decoration: none;
+    text-transform: uppercase;
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+nav .basket-shop
+{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+nav .basket-shop span
+{
+ 
+    font-size:  15px;
+    color: white;
+    text-transform:uppercase;
+}
+
+nav .log-in
+{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+nav .log-in span
+{
+ 
+    font-size:  15px;
+    color: white;
+    text-transform:uppercase;
+}
+/* SECTION #1 -----------------
+ ------------------------------*/
+
+ .places-text
+ {
+     margin-top: 50px;
+ }
+ .places-text h2
+ {
+     margin-bottom:30px;
+     margin-right: 20px;
+ }
+
+ #place-1 img
+ {
+    margin: 70px auto;
+    box-shadow: 0 0 20px rgba(0,0,0,.3);
+    display: flex;
+    justify-content: flex-end;
+    align-items: right;
+    width: 100%;
+    height: auto;
+ }
+
+/* SECTION #2 -----------------
+ ------------------------------*/
+
+ #place-2 h2
+ {
+     text-align: center;
+     max-width: 900px;
+ }
+
+ #place-2 h2
+ {
+    margin: 100px auto 20px auto;
+ }
+
+ #place-2 img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 80px;
+
+}
+
+/* XPERIENCIES -----------------
+ ------------------------------*/
+
+ #xperiencies
+ {
+     padding: 15px 0;
+ }
+
+ #xperiencies h2,
+ #xperiencies p{
+     text-align: center;
+     max-width: 900px;
+     margin: 0 auto 20px auto;
+ }
+
+ #xperiencies .col-md-3
+ {
+     text-align: center;
+ }
+
+ span.price
+ {
+     font-size: 20px;
+ }
+
+/* NEWSLETTER -----------------
+ ------------------------------*/
+
+ section#newsletter
+ {
+    width: 100%;
+    height: 60vh; /* So it covers the whole page*/
+    background-color: var(--titleColor);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+ section#newsletter h2
+ {
+     margin-bottom: 20px;
+ }
+ section#newsletter p{
+     max-width: 700px;
+     margin:0 auto;
+     margin-bottom: 30px;
+ }
+
+.newsletter-box
+{
+    background-color: white;
+    padding: 50px;
+    box-shadow: 0 0 20px rgba(0,0,0,.3);
+}
+
+form
+{
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+form input[type='email']
+{
+    flex-basis: 50%;
+    background-color: #E8E8E8;
+    border: none;
+    padding: 15px;
+}
+
+button
+{
+    background-color: var(--titleColor);
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding: 15px 25px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+button:hover
+{
+    background-color: var(--textColor);    
+}
+
+/*Experience 1 page*/
+.col1
+{
+   float: left;
+   width: 35%;
+   -ms-flex:0 0 50%;
+}
+
+ .col1 img
+{
+    height: 270px;
+    width: 350px;
+}
+
+
+.col2
+{
+   float: right;
+   width: 65%;
+   
+}
+
+.col2 img
+{
+    align: left;
+    height: 40px;
+    width: 200px;
+
+}
+
+
+/* FOOTER -----------------
+ ------------------------------ */
+
+ footer
+ {
+     padding: 30px 0;
+     background-color: var(--titleColor);
+ }
+
+ footer p{
+     font-size:  18px;
+     color: #E8E8E8;
+     text-align: center;
+ }

@@ -101,6 +101,7 @@ class User {
   
           // We set the resultspan with a new text and return true to get out of this function.
           resultSpan.innerText = "Hi " + user.firstname + " " + user.lastname + ", you've successfully entered the system";
+          window.location = 'http://localhost/index.html#?options=go_here';
           return true;
         }
       }
