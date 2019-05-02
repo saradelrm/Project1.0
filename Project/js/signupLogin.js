@@ -100,9 +100,15 @@ class User {
           localStorage.setItem('users', JSON.stringify(users));
   
           // We set the resultspan with a new text and return true to get out of this function.
-          resultSpan.innerText = "Hi " + user.firstname + " " + user.lastname + ", you've successfully entered the system";
-          window.location = 'http://localhost/index.html#?options=go_here';
-          return true;
+          //resultSpan.innerText = "Hi " + user.firstname + " " + user.lastname + ", you've successfully entered the system";
+          
+          // Redirect to Purchase site, since the credentials are the correct ones
+          function goPurchase(){
+            window.location.href="./purchase.html"
+          }
+          goPurchase();         
+          
+          //return true;
         }
       }
   
