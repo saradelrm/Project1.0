@@ -12,11 +12,11 @@
 
 <title>Copenhagen</title>
 
-<link href = "css/CPH.css" rel= "stylesheet" type = "text/css">  
+<link href = "css/style.css" rel= "stylesheet" type = "text/css">  
 
 </head>
 <body>
-    <header>
+    <header class="pageTwo">
             <nav> <!--The <nav> tag defines a set of navigation links-->
                 <div class= "container"> <!--A container provides equality for all HTML container elements (margins, fonts, color etc)-->
                     <!--divs should be used to group sections of a document-->
@@ -34,18 +34,18 @@
                         </ul>
                     </div>
                 
-            </div>
+                </div>
 
-            <div class="basket-shop">
-                <a href="cart.html"><img src="pictures/Basket.png" alt="Basket shop icon" ></a>
-                <span> Basket (
-                     <!-- Location of the js function we need for the shoping cart-->
-                    <script type="text/javascript" src="js/purchase.js"></script>
-                    <script type="text/javascript">
-                    document.write(totalAmount);                             // calls the global variable that contains the cart total
-                    </script> )
-                </span> <!-- span used to wrap small portions of text --> 
-            </div>
+                <div class="basket-shop">
+                    <a href="cart.html"><img src="pictures/Basket.png" alt="Basket shop icon" ></a>
+                    <span> Basket (
+                        <!-- Location of the js function we need for the shoping cart-->
+                        <script type="text/javascript" src="js/purchase.js"></script>
+                        <script type="text/javascript">
+                        document.write(totalAmount);                             // calls the global variable that contains the cart total
+                        </script> )
+                    </span> <!-- span used to wrap small portions of text --> 
+                </div>
 
             </nav>
     </header>
@@ -58,7 +58,7 @@
             <div class="row"> <!--rows divide the text into equal columns, ensuring it is aligned-->
                 <div class="col">
                     <h2>XPERIENCES AVAILABLE</h2>
-                    <p>This are all the experiences that you can enjoy</p>
+                    <p>These are all the experiences that you can enjoy</p>
                 </div>
             </div>
 
