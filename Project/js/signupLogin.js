@@ -57,11 +57,16 @@ class User {
     
     //Check the new user has agreed to terms and conditions
   } else if (inputTerms.checked == false){
-    resultSpan.innerText = "You need to agree on terms and conditions";
+    resultSpan.innerText = "You need to agree with our terms and conditions";
     return false;
   }
   
   // TODO check if username is already registered 
+    //checking if the user is already created in local storage
+    for (let i = 0; i < users.length; i++) {
+      if (users[i].username==inputUsername)
+      alert('This user name is already registered')
+    }
 
     //Add new user object to the class
     users.push(new User(inputFirstName.value, inputLastname.value, inputUsername.value, inputUserEmail.value, inputPassword.value));
