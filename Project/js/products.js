@@ -2,7 +2,6 @@
 
 let products = []
 let cart = []
-let orders = []
 
 /**
  * PRODUCTS
