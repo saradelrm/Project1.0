@@ -64,10 +64,11 @@ class User {
   // TODO check if username is already registered 
     //checking if the user is already created in local storage
     for (let i = 0; i < users.length; i++) {
-      if (users[i].username==inputUsername)
-      alert('This user name is already registered')
+      if (users[i].username == inputUsername.value){
+      resultSpan.innerText = "This user name is already registered, please choose a different one";
+      return false;
     }
-
+  }
     //Add new user object to the class
     users.push(new User(inputFirstName.value, inputLastname.value, inputUsername.value, inputUserEmail.value, inputPassword.value));
     
