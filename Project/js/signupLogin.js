@@ -55,13 +55,17 @@ class User {
     resultSpan.innerText = "You need to enter a username and password in order to use our system";
     return false;
     
+    //Check the new user password length
+  }   else if (inputPassword.value.length < 8){
+        resultSpan.innerText = "Password too short, minimum 8 characters";
+        return false ;
+        
     //Check the new user has agreed to terms and conditions
-  } else if (inputTerms.checked == false){
-    resultSpan.innerText = "You need to agree with our terms and conditions";
-    return false;
-  }
+        } else if (inputTerms.checked == false){
+            resultSpan.innerText = "You need to agree with our terms and conditions";
+            return false;
+          }
   
-  // TODO check if username is already registered 
     //checking if the user is already created in local storage
     for (let i = 0; i < users.length; i++) {
       if (users[i].username == inputUsername.value){
