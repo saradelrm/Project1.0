@@ -53,7 +53,7 @@ function userOrder (){
                 let newId = Date.now()+Math.floor(Math.random() * 101);
                   
                     orders.push(new Order(currentCart[x].name, currentCart[x].price, currentCart[x].id, currentCart[x].quantity, 
-                        currentUser[i].email, currentUser[i].firstname+' ' + currentUser[i].lastname, newId, qty));
+                        currentUser[i].email, currentUser[i].firstname+' ' + currentUser[i].lastname, newId.toString(), qty));
                 //Update the value of orders in the local storage
                 localStorage.setItem('order', JSON.stringify(orders));
                 
@@ -79,10 +79,15 @@ function getOrders (){
 const renderOrderElement = (item) => {
     return `
         <tr>
-            <td>${item.itemName}</td>
-            <td>${item.itemPrice} DKK.</td>
-            <td>${item.itemQty}</td>
+            <tr>
+                <td>Order number: ${item.orderId}</td>
+                <tr><td>Item name: ${item.itemName}</td></tr>
+                <tr><td>Quantity: ${item.itemQty}</td></tr>
+                <tr><td>Price per unit: ${item.itemPrice} DKK.</td></tr>
+                <tr><td> Line total: ${item.orderTotal}</td></tr>
+            </tr>
         </tr>
+        <br><br><br>
     `
 }
 
