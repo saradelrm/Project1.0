@@ -33,8 +33,6 @@ function loadOrders (){
     }
 }
 
-loadOrders()
-
 function userOrder (){
     
     currentUser = JSON.parse(localStorage.getItem('users'));
@@ -55,7 +53,6 @@ function userOrder (){
                   
                     orders.push(new Order(currentCart[x].name, currentCart[x].price, currentCart[x].id, currentCart[x].quantity, 
                         currentUser[i].email, currentUser[i].firstname+' ' + currentUser[i].lastname, newId, qty));
-                         console.log(orders)
                 //Update the value of orders in the local storage
                 localStorage.setItem('order', JSON.stringify(orders));
             }     
@@ -64,9 +61,39 @@ function userOrder (){
           
     }
           
-          //return true;
+}
+userOrder ()
+loadOrders()
+
+function getOrders (){
+    orders = JSON.parse(localStorage.getItem ('orders'));
+    return orders
 }
 
-userOrder ()
+/**
+ * ORDER VIEW
+ */
+
+// generateShopDOM is a function that generates the DOM (Shop) structure
+
+const generateOrderDOM = () => {
+    const orderCatalog = document.getElementById('order-lines') //the variable productCatalog will get elements 
+    //from the list of xperiences we have in products.js
+    const currentOrders = getOrders() //Here we get only the products that belong to the city we have selected
+    console.log(currentOrders)
+    var html = ''
+
+    currentOrders.forEach((item) => {
+        html += item.renderHTML() //for each product this line will generate an HTML page
+    })
+
+    orderCatalog.innerHTML = html //Required to change the HTML in each product page
+}
+
+// Invoke the generateShopDOM() function to render the DOM
+generateOrderDOM()
+
+
+
       
 
