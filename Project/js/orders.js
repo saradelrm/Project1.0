@@ -18,6 +18,7 @@ let orders = []
 let currentCart = []
 let currentUser = []
 
+
 function loadOrders (){
     if (localStorage.getItem('orders') === null) {
         //In case there is none, set an empty array
@@ -55,6 +56,7 @@ function userOrder (){
                         currentUser[i].email, currentUser[i].firstname+' ' + currentUser[i].lastname, newId, qty));
                 //Update the value of orders in the local storage
                 localStorage.setItem('order', JSON.stringify(orders));
+                
             }     
            
         }    
@@ -66,33 +68,43 @@ userOrder ()
 loadOrders()
 
 function getOrders (){
-    orders = JSON.parse(localStorage.getItem ('orders'));
+    orders = JSON.parse(localStorage.getItem ('order'));
     return orders
 }
 
 /**
  * ORDER VIEW
  */
-
-// generateShopDOM is a function that generates the DOM (Shop) structure
-
-const generateOrderDOM = () => {
-    const orderCatalog = document.getElementById('order-lines') //the variable productCatalog will get elements 
-    //from the list of xperiences we have in products.js
-    const currentOrders = getOrders() //Here we get only the products that belong to the city we have selected
-    console.log(currentOrders)
-    var html = ''
-
-    currentOrders.forEach((item) => {
-        html += item.renderHTML() //for each product this line will generate an HTML page
-    })
-
-    orderCatalog.innerHTML = html //Required to change the HTML in each product page
+// Create a function that renders the individual order item
+const renderOrderElement = (item) => {
+    return `
+        <tr>
+            <td>${item.itemName}</td>
+            <td>${item.itemPrice} DKK.</td>
+            <td>${item.itemQty}</td>
+        </tr>
+    `
 }
 
-// Invoke the generateShopDOM() function to render the DOM
-generateOrderDOM()
+// Create a function that generates the DOM (Orders) structure
+const generateOrderDOM = () => {
+    const orderLine = document.getElementById('order-content')
+    const currentOrder = getOrders()
 
+    let html = ''
+
+    if (currentOrder.length === 0) { //checking if the length of the array is 0 or not and displaying a message
+        html = '<h3>Oh no, your order is empty!</h3>' 
+    } else {
+        currentOrder.forEach((item) => { //in case the cart is not empty the code will render the elements of the cart 
+            html += renderOrderElement(item)
+        })
+    }
+
+    orderLine.innerHTML = html
+}
+
+generateOrderDOM()
 
 
       
