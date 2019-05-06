@@ -80,14 +80,15 @@ const renderOrderElement = (item) => {
     return `
         <tr>
             <tr>
-                <td>Order number: ${item.orderId}</td>
+                <td>Line order ID: ${item.orderId}</td>
+                <tr><td>User name: ${item.userName}</td></tr>
                 <tr><td>Item name: ${item.itemName}</td></tr>
                 <tr><td>Quantity: ${item.itemQty}</td></tr>
                 <tr><td>Price per unit: ${item.itemPrice} DKK.</td></tr>
-                <tr><td> Line total: ${item.orderTotal}</td></tr>
+                <tr><td>Line total: ${item.orderTotal}</td></tr>
             </tr>
         </tr>
-        <br><br><br>
+        <br><br>
     `
 }
 
