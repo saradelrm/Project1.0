@@ -10,7 +10,6 @@ function cartTotal(){   // function for calculating total items in basket
 }
 let totalAmount = cartTotal()
 
-
 const homeB = document.getElementsByClassName('home-btn')
 
 //Event listener, once the user clicks for returning home after purchase
