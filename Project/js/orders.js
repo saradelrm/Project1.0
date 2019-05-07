@@ -1,6 +1,6 @@
 
 class Order { //defining the class orders
-    constructor(itemName, itemPrice, itemId, itemQty, userId, userName, orderId, orderTotal) 
+    constructor(itemName, itemPrice, itemId, itemQty, userId, userName, orderId, orderTotal, orderDate) 
     {  
         this.itemName = itemName,
         this.itemPrice = itemPrice,
@@ -10,6 +10,7 @@ class Order { //defining the class orders
         this.userName = userName,
         this.orderId = orderId,
         this.orderTotal = orderTotal
+        this.orderDate = orderDate
     }
 }
 
@@ -17,6 +18,18 @@ class Order { //defining the class orders
 let orders
 let currentCart = []
 let currentUser = []
+
+//We calculate the current date so we can add it to the order
+var currentDay = function(){
+    today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //As January is 0.
+    var yyyy = today.getFullYear();
+    
+    if(dd<10) dd='0'+dd;
+    if(mm<10) mm='0'+mm;
+    return (dd+'/'+mm+'/'+yyyy);
+}
 
 
 function loadOrders (){
@@ -29,7 +42,7 @@ function loadOrders (){
     //for each order, add a new object to the user class with each of the atributes defined
         for (let i = 0; i < orders.length; i++) {
         orders[i] = new Order(orders[i].itemName, orders[i].itemPrice, orders[i].itemId, orders[i].itemQty, 
-            orders[i].userId, orders[i].userName, orders[i].orderId, orders[i].orderTotal);
+            orders[i].userId, orders[i].userName, orders[i].orderId, orders[i].orderTotal, orders[i].orderDate);
         }
     }
 }
@@ -40,7 +53,6 @@ function userOrder (){
     
     currentUser = JSON.parse(localStorage.getItem('users'));
     currentCart = JSON.parse(localStorage.getItem('cart'));
-    console.log(currentUser)
 
     
     for(let i = 0; i < currentUser.length; i++) {
@@ -55,7 +67,7 @@ function userOrder (){
                 let newId = Date.now()+Math.floor(Math.random() * 101);
                   
                     orders.push(new Order(currentCart[x].name, currentCart[x].price, currentCart[x].id, currentCart[x].quantity, 
-                        currentUser[i].email, currentUser[i].firstname+' ' + currentUser[i].lastname, newId.toString(), qty));
+                        currentUser[i].email, currentUser[i].firstname+' ' + currentUser[i].lastname, newId.toString(), qty, currentDay()));
                 //Update the value of orders in the local storage
                 localStorage.setItem('order', JSON.stringify(orders));
                 
@@ -68,35 +80,31 @@ function userOrder (){
 }
 userOrder ()
 
+//Retrieve the orders from the user that has logged in the system
 function getCurrentOrders (){
     currentUser = JSON.parse(localStorage.getItem('users'));
     let currentOrders = []
 
     let currentUserId 
+    //compare and obtain the user that is logged in 
     for(let i = 0; i < currentUser.length; i++){
         if(currentUser[i].logged == 1 ){
             currentUserId = currentUser[i].email
         }
     }
     orders = JSON.parse(localStorage.getItem ('order'));
-    for (let x = 0; x < orders.length; x++){
-       
+    
+    for (let x = 0; x < orders.length; x++){  
         if (currentUserId == orders[x].userId){
             currentOrders.push(orders[x]) 
-            console.log(currentOrders)
         }
   
-        }
+    }
+    //return only the orders that have been placed by the logged in user
     return currentOrders
 }
 
 getCurrentOrders()
-
-/*function getOrders (){
-    orders = JSON.parse(localStorage.getItem ('order'));
-    return orders
-}
-*/
 
 /**
  * ORDER VIEW
@@ -107,6 +115,7 @@ const renderOrderElement = (item) => {
         <tr>
             <tr>
                 <td>Line order ID: ${item.orderId}</td>
+                <tr><td> Order date: ${item.orderDate}</td></tr>
                 <tr><td>User name: ${item.userName}</td></tr>
                 <tr><td>Item name: ${item.itemName}</td></tr>
                 <tr><td>Quantity: ${item.itemQty}</td></tr>
@@ -114,7 +123,7 @@ const renderOrderElement = (item) => {
                 <tr><td>Line total: ${item.orderTotal}</td></tr>
             </tr>
         </tr>
-        <br><br>
+        <br>
     `
 }
 
