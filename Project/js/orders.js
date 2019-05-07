@@ -20,7 +20,7 @@ let currentCart = []
 let currentUser = []
 
 //We calculate the current date so we can add it to the order
-var currentDay = function(){
+var currentDay = function(sp){
     today = new Date();
     var dd = today.getDate();
     var mm = today.getMonth()+1; //As January is 0.
@@ -28,7 +28,7 @@ var currentDay = function(){
     
     if(dd<10) dd='0'+dd;
     if(mm<10) mm='0'+mm;
-    return (dd+'/'+mm+'/'+yyyy);
+    return (dd+sp+mm+sp+yyyy);
 }
 
 
@@ -64,10 +64,10 @@ function userOrder (){
                 let qty = currentCart[x].price * currentCart[x].quantity;
                 
                 //Calculate a random Id
-                let newId = Date.now()+Math.floor(Math.random() * 101);
+                let newId = currentDay('')+Math.floor(Math.random() * 101);
                   
                     orders.push(new Order(currentCart[x].name, currentCart[x].price, currentCart[x].id, currentCart[x].quantity, 
-                        currentUser[i].email, currentUser[i].firstname+' ' + currentUser[i].lastname, newId.toString(), qty, currentDay()));
+                        currentUser[i].email, currentUser[i].firstname+' ' + currentUser[i].lastname, newId.toString(), qty, currentDay('/')));
                 //Update the value of orders in the local storage
                 localStorage.setItem('order', JSON.stringify(orders));
                 
@@ -112,17 +112,15 @@ getCurrentOrders()
 // Create a function that renders the individual order item
 const renderOrderElement = (item) => {
     return `
-        <tr>
             <tr>
-                <td>Line order ID: ${item.orderId}</td>
-                <tr><td> Order date: ${item.orderDate}</td></tr>
-                <tr><td>User name: ${item.userName}</td></tr>
-                <tr><td>Item name: ${item.itemName}</td></tr>
-                <tr><td>Quantity: ${item.itemQty}</td></tr>
-                <tr><td>Price per unit: ${item.itemPrice} DKK.</td></tr>
-                <tr><td>Line total: ${item.orderTotal}</td></tr>
+                <td>${item.orderId}</td>
+                <td>${item.orderDate}</td>
+                <td>${item.userName}</td>
+                <td>${item.itemName}</td>
+                <td>${item.itemQty}</td>
+                <td>${item.itemPrice} DKK.</td>
+                <td>${item.orderTotal}</td>
             </tr>
-        </tr>
         <br>
     `
 }

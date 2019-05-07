@@ -29,14 +29,25 @@
     <h2>
     Congratulations! You have successfully placed your order!
 </h2>
+<h3> This is your order history</h3>
 
 </div>
 
 <div>
     <!--table for showing the cart contents-->
     <table>
-
-<!--generated cart data associated with id (CHECK THIS)-->
+        <thead>
+                <tr> <!--tr defines a row in a table-->
+                    <th>Order ID:</th> <!--th defines a header in a table-->
+                    <th>Order date:</th>
+                    <th>User name:</th>
+                    <th>Item name:</th>
+                    <th>Quantity name:</th>
+                    <th>Price per unit:</th>
+                    <th>Line total:</th>
+                </tr>
+            </thead>
+    <!--generated cart data associated with id (CHECK THIS)-->
         <tbody id="order-content">
 
         </tbody>
