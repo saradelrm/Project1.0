@@ -9,25 +9,28 @@ class User {
       this.username = username;
       this.email = email;
       this.password = password;
+      this.logged = 0;
     }
   }
   
   var users;
   
-  //Check if there is any user in the local storage
-  if (localStorage.getItem('users') === null) {
-    //In case there is none, set an empty array
-    users = [];
-  } else {
-    //In case there is users, retrieve them
-    users = JSON.parse(localStorage.getItem('users'));
+  function userCheck (){
+        //Check if there is any user in the local storage
+    if (localStorage.getItem('users') === null) {
+      //In case there is none, set an empty array
+      users = [];
+    } else {
+      //In case there is users, retrieve them
+      users = JSON.parse(localStorage.getItem('users'));
 
-    //for each user, add a new object to the user class with each of the atributes defined
-    for (let i = 0; i < users.length; i++) {
-      users[i] = new User(users[i].firstname, users[i].lastname, users[i].username, users[i].email, users[i].password);
+      //for each user, add a new object to the user class with each of the atributes defined
+      for (let i = 0; i < users.length; i++) {
+        users[i] = new User(users[i].firstname, users[i].lastname, users[i].username, users[i].email, users[i].password, users[i].logged);
+      }
     }
   }
-  
+  userCheck()
   // Bind the button to a variable for later use
   var submit = document.getElementById('submit');
   var signUp = document.getElementById('signUp');
@@ -55,21 +58,26 @@ class User {
     resultSpan.innerText = "You need to enter a username and password in order to use our system";
     return false;
     
+    //Check the new user password length
+  }   else if (inputPassword.value.length < 8){
+        resultSpan.innerText = "Password too short, minimum 8 characters";
+        return false ;
+
     //Check the new user has agreed to terms and conditions
-  } else if (inputTerms.checked == false){
-    resultSpan.innerText = "You need to agree with our terms and conditions";
-    return false;
-  }
+        } else if (inputTerms.checked == false){
+            resultSpan.innerText = "You need to agree with our terms and conditions";
+            return false;
+          }
   
-  // TODO check if username is already registered 
     //checking if the user is already created in local storage
     for (let i = 0; i < users.length; i++) {
-      if (users[i].username==inputUsername)
-      alert('This user name is already registered')
+      if (users[i].username == inputUsername.value){
+      resultSpan.innerText = "This user name is already registered, please choose a different one";
+      return false;
     }
-
+  }
     //Add new user object to the class
-    users.push(new User(inputFirstName.value, inputLastname.value, inputUsername.value, inputUserEmail.value, inputPassword.value));
+    users.push(new User(inputFirstName.value, inputLastname.value, inputUsername.value, inputUserEmail.value, inputPassword.value, 0));
     
     //Update the value of users in the local storage
     localStorage.setItem('users', JSON.stringify(users));
@@ -99,13 +107,13 @@ class User {
         // Bind user to a variable for easy use
         var user = users[i];
 
-        // If username and password introduced through the form matches any one ofn the users we have stored
+        // If username and password introduced through the form matches any one of the users we have stored
         if(user.username == inputUsername.value && user.password == inputPassword.value) {
-  
+
+          users[i].logged = 1;
+         
           localStorage.setItem('users', JSON.stringify(users));
   
-          // We set the resultspan with a new text and return true to get out of this function.
-          //resultSpan.innerText = "Hi " + user.firstname + " " + user.lastname + ", you've successfully entered the system";
           
           // Redirect to Purchase site, since the credentials are the correct ones
           function goPurchase(){

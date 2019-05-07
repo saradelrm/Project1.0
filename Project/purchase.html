@@ -29,19 +29,27 @@
     <h2>
     Congratulations! You have successfully placed your order!
 </h2>
+<h3> This is your order history</h3>
 
 </div>
+
 <div>
     <!--table for showing the cart contents-->
     <table>
         <thead>
-            <tr> <!--tr defines a row in a table-->
-                <th>Name:</th> <!--th defines a header in a table-->
-                <th>Price:</th>
-                <th>Quantity:</th>
-            </tr>
-        </thead>
-        
+                <tr> <!--tr defines a row in a table-->
+                    <th>Order ID:</th> <!--th defines a header in a table-->
+                    <th>Order date:</th>
+                    <th>User name:</th>
+                    <th>Item name:</th>
+                    <th>Quantity name:</th>
+                    <th>Price per unit:</th>
+                    <th>Line total:</th>
+                </tr>
+            </thead>
+    <!--generated cart data associated with id (CHECK THIS)-->
+        <tbody id="order-content">
+
         </tbody>
     </table>
 </div>
@@ -54,6 +62,11 @@
                
         </div>
 </footer>
+<script src="js/signupLogin.js"></script>
+<script src="js/xperience.js"></script>
+<script src="js/products.js"></script>
+<script src="js/orders.js"></script>
 <script src="js/purchase.js"></script>
+
 </body>
 </html>

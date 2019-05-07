@@ -2,7 +2,6 @@
 
 let products = []
 let cart = []
-let orders = []
 
 /**
  * PRODUCTS
@@ -94,12 +93,14 @@ const removeFromCart = (id, index) => {
 
 // Create a function that loads the cart from localStorage
 const loadCart = function() {
+    
     if (localStorage.getItem('cart') === null) {
             cart = []
     } else {
             cart = JSON.parse(localStorage.getItem('cart'))
     }
-    
+    console.log(cart)
+
 }
 
 // function that saves the cart to localStorage
