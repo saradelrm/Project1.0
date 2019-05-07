@@ -14,17 +14,17 @@ class Order { //defining the class orders
 }
 
 //Check if there is any order in the local storage
-let orders = []
+let orders
 let currentCart = []
 let currentUser = []
 
 
 function loadOrders (){
-    if (localStorage.getItem('orders') === null) {
+    if (localStorage.getItem('order') === null) {
         //In case there is none, set an empty array
         orders = [];
 } else {
-    orders = JSON.parse(localStorage.getItem ('orders'));
+    orders = JSON.parse(localStorage.getItem ('order'));
 
     //for each order, add a new object to the user class with each of the atributes defined
         for (let i = 0; i < orders.length; i++) {
@@ -33,6 +33,8 @@ function loadOrders (){
         }
     }
 }
+
+loadOrders()
 
 function userOrder (){
     
@@ -65,12 +67,36 @@ function userOrder (){
           
 }
 userOrder ()
-loadOrders()
 
-function getOrders (){
+function getCurrentOrders (){
+    currentUser = JSON.parse(localStorage.getItem('users'));
+    let currentOrders = []
+
+    let currentUserId 
+    for(let i = 0; i < currentUser.length; i++){
+        if(currentUser[i].logged == 1 ){
+            currentUserId = currentUser[i].email
+        }
+    }
+    orders = JSON.parse(localStorage.getItem ('order'));
+    for (let x = 0; x < orders.length; x++){
+       
+        if (currentUserId == orders[x].userId){
+            currentOrders.push(orders[x]) 
+            console.log(currentOrders)
+        }
+  
+        }
+    return currentOrders
+}
+
+getCurrentOrders()
+
+/*function getOrders (){
     orders = JSON.parse(localStorage.getItem ('order'));
     return orders
 }
+*/
 
 /**
  * ORDER VIEW
@@ -95,7 +121,7 @@ const renderOrderElement = (item) => {
 // Create a function that generates the DOM (Orders) structure
 const generateOrderDOM = () => {
     const orderLine = document.getElementById('order-content')
-    const currentOrder = getOrders()
+    const currentOrder = getCurrentOrders()
 
     let html = ''
 
