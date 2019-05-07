@@ -63,9 +63,11 @@ const addToCart = (id, quant, name) => {
     //Show the current state of cart
     console.log(cart)
     if (!findProductById(cart, id)) {
-            cart.push({...findProductById(products, id), quantity: quant}) //if the product is not found in the cart then we show the quantity that was selected
+            cart.push({...findProductById(products, id), quantity: quant}) 
+            //if the product is not found in the cart then we show the quantity that was selected
     } else {
-            findProductById(cart, id).quantity += quant       //otherwise we increase the quantity of the product with the new chosen quantity
+            findProductById(cart, id).quantity += quant       
+            //otherwise we increase the quantity of the product with the new chosen quantity
     }
 
 //Show an alert informing of the product being added to the cart and how many times it has been added

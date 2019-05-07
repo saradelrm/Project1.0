@@ -5,9 +5,10 @@
 // generateShopDOM is a function that generates the DOM (Shop) structure
 
 const generateShopDOM = () => {
-    const productCatalog = document.getElementById('xperience-catalog') //the variable productCatalog will get elements 
+    const productCatalog = document.getElementById('xperience-catalog') 
+    //the variable productCatalog will get elements 
     //from the list of xperiences we have in products.js
-    const products = getProducts() //Here we get only the products that belong to the city we have selected
+    const products = getProducts() //Here we get only the products that belong to the city we selected
     var html = ''
 
     products.forEach((item) => {
