@@ -52,14 +52,14 @@ class User {
     var inputPassword = document.getElementById('password'); 
     var inputTerms = document.getElementById ('terms');
   
-  //Check if the user inputs Username or password  
-  if(inputUsername.value.length == 0 || inputPassword.value.length == 0){
+  //Check if the user fills in the form 
+  if(inputUsername.value.length == 0 || inputFirstName.value.length == 0 || inputLastname.value.length == 0 || inputUserEmail.value.length == 0){
     // Set the resultspan with a new text and return false to get out of this function
-    resultSpan.innerText = "You need to enter a username and password in order to use our system";
+    resultSpan.innerText = "You need to enter the information in all the fields market with *";
     return false;
     
     //Check the new user password length
-  }   else if (inputPassword.value.length < 8){
+  }   else if (inputPassword.value.length == 0 ||inputPassword.value.length < 8){
         resultSpan.innerText = "Password too short, minimum 8 characters";
         return false ;
 

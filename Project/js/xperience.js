@@ -1,6 +1,5 @@
 //the variable idCapital gets the hash of the link 
 const idCapital = location.hash.substring(1)
-//console.log(idCapital)
 
 
 // Create a function to get the products that match the capital where we are located (CPH, OSL, STK) 
@@ -11,7 +10,6 @@ function getProducts() {
    for(i = 0; i < products.length; i++){
        if (products[i].id.includes(idCapital)){
            productCapital.push(products[i])
-           console.log (productCapital)
     }
    }
     return productCapital

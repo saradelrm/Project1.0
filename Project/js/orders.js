@@ -119,7 +119,7 @@ const renderOrderElement = (item) => {
                 <td>${item.itemName}</td>
                 <td>${item.itemQty}</td>
                 <td>${item.itemPrice} DKK.</td>
-                <td>${item.orderTotal}</td>
+                <td>${item.orderTotal} DKK.</td>
             </tr>
         <br>
     `
