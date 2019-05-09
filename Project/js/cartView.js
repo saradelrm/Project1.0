@@ -1,5 +1,3 @@
-console.log('cartview')
-
 /**
  * CART VIEW
  */
@@ -43,16 +41,9 @@ const generateCartDOM = () => {
 function addRemoveButton() {                        
     //Add an event listener for the remove button
     const buttons = document.getElementsByClassName('remove-cart-btn')
-    console.log(buttons.length)
-    
-    for (let i = 0; i < buttons.length; i++) {
-        console.log(buttons[i])
-    }
       
     for (let i = 0; i < buttons.length; i++) {
-        console.log('loop')
         buttons[i].addEventListener('click', (event) => {
-            console.log('clicked')
             removeFromCart(buttons[i].dataset.id, i)
         })
     }

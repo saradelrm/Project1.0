@@ -58,9 +58,6 @@ function productAdded(quant, name) {
 
 // Create a function that adds a product by it's ID and its quantity to the shopping cart
 const addToCart = (id, quant, name) => {
-    console.log(`${id} has been added ${quant} times`);
-    //Show the current state of cart
-    console.log(cart)
     if (!findProductById(cart, id)) {
             cart.push({...findProductById(products, id), quantity: quant}) 
             //if the product is not found in the cart then we show the quantity that was selected
@@ -85,7 +82,6 @@ const removeFromCart = (id, index) => {
     } else {
         cart[index].quantity--
     }
-    console.log(`${id} has been removed`);
     saveCart()
     generateCartDOM() //invoke the function to generate the new cart 
 }
@@ -99,7 +95,6 @@ const loadCart = function() {
     } else {
             cart = JSON.parse(localStorage.getItem('cart'))
     }
-    console.log(cart)
 
 }
 

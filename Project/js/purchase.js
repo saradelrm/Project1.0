@@ -2,13 +2,20 @@ let totalAmount = 0
 
 //Function for calculating the total of the shopping cart
 function cartTotal(){   // function for calculating total items in basket 
-    let basket = []
+    let basket
     let total = 0
-    basket = JSON.parse(localStorage.getItem('cart'))   // gets value from local storage
-    basket.forEach((basket) => {                        // for each element in the basket
-    total += basket.quantity                            // gets the quantity and adds to the total amount
-     })
-    return total.toString()                             // returns total in string form
+    //If there is not cart yet we will return 0
+    if (JSON.parse(localStorage.getItem('cart')) === null ){
+         return   total.toString()
+
+        } else{
+                basket = JSON.parse(localStorage.getItem('cart'))
+               
+                basket.forEach((basket) => {                        // for each element in the basket
+                total += basket.quantity                            // gets the quantity and adds to the total amount
+                })
+                return total.toString()                             // returns total in string form
+            }
 }
 totalAmount = cartTotal()
 
@@ -19,10 +26,8 @@ const homeB = document.getElementsByClassName('home-btn')
 for (let i = 0; i < homeB.length; i++) {
     homeB[i].addEventListener('click', (event) => {
         localStorage.setItem('cart', JSON.stringify([]))
-       
         //Check the users in the local storage
         userCheck()
-        
         //Clear the logged flag
         localStorage.setItem('users', JSON.stringify(users));
         
