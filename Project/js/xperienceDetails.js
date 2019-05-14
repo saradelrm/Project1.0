@@ -10,7 +10,7 @@ const experiences = getAllProducts()
         }) 
 
 
-        //associating each experience ....?(not sure with what)
+        //sending to the xperienceDetails html page the content associated to each id that comes from the constructors of the class Xperience
         document.getElementById("xp-name").innerText = experience.name
         document.getElementById("xp-title").innerText = experience.title
         document.getElementById("xp-description").innerText = experience.description
