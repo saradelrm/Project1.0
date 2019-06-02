@@ -1,4 +1,4 @@
-
+//we have 3 classes: order, user, experience
 class Order { //defining the class orders
     constructor(itemName, itemPrice, itemId, itemQty, userId, userName, orderId, orderTotal, orderDate) 
     {  
@@ -14,7 +14,7 @@ class Order { //defining the class orders
     }
 }
 
-//Check if there is any order in the local storage
+
 let orders
 let currentCart = []
 let currentUser = []
@@ -48,7 +48,7 @@ function loadOrders (){
 }
 
 loadOrders()
-
+//generating the order line
 function userOrder (){
     
     currentUser = JSON.parse(localStorage.getItem('users'));
@@ -56,16 +56,16 @@ function userOrder (){
 
     
     for(let i = 0; i < currentUser.length; i++) {
-        // check whoch user is logged in
-        if(currentUser[i].logged == 1 ) {
-            for(let x = 0 ; x < currentCart.length; x++){
+        // check which user is logged in
+        if(currentUser[i].logged == 1 ) { //go through the users and check which one is logged in
+            for(let x = 0 ; x < currentCart.length; x++){ //go through the user's cart
 
                 //Calculate the total of the line
                 let qty = currentCart[x].price * currentCart[x].quantity;
                 
                 //Calculate a random Id
                 let newId = currentDay('')+Math.floor(Math.random() * 101);
-                  
+                //creates a new order and pushes it with its content
                     orders.push(new Order(currentCart[x].name, currentCart[x].price, currentCart[x].id, currentCart[x].quantity, 
                         currentUser[i].email, currentUser[i].firstname+' ' + currentUser[i].lastname, newId.toString(), qty, currentDay('/')));
                 //Update the value of orders in the local storage
@@ -81,6 +81,8 @@ function userOrder (){
 userOrder ()
 
 //Retrieve the orders from the user that has logged in the system
+//gets current and past orders
+//created this and changed its purpose on the way
 function getCurrentOrders (){
     currentUser = JSON.parse(localStorage.getItem('users'));
     let currentOrders = []

@@ -6,9 +6,9 @@ function cartTotal(){   // function for calculating total items in basket
     let total = 0
     //If there is not cart yet we will return 0
     if (JSON.parse(localStorage.getItem('cart')) === null ){
-         return   total.toString()
+         return   total.toString() //because that's how we show it in html, this is for the small cart on top of the page
 
-        } else{
+        } else{ //calculate the total of elements for the small cart on the page
                 basket = JSON.parse(localStorage.getItem('cart'))
                
                 basket.forEach((basket) => {                        // for each element in the basket
@@ -19,7 +19,7 @@ function cartTotal(){   // function for calculating total items in basket
 }
 totalAmount = cartTotal()
 
-const homeB = document.getElementsByClassName('home-btn')
+const homeB = document.getElementsByClassName('home-btn')//link it to purchase html
 
 //Event listener, once the user clicks for returning home after purchase
 //the local storage of the cart clears up and the user log flag goes back to 0

@@ -2,14 +2,16 @@
 
 let products = []
 let cart = []
-
+//the cart array will after get the data from the function addToCart
 /**
  * PRODUCTS
  */
 
 // Load the current database of products from localStorage
 //for each product we have a class that was defined in the file xperience.js
-const loadProducts = () => {
+
+//Creating the function loadProducts, with no parameters that creates the objects Xperience
+const loadProducts = () => {  
     products = [new Xperience('Enjoy a day at Serenity Spa!','Spa day','The spa\'s facilities include a jacuzzi, a relaxation area, a sauna, an aromatherapy steam room and a pool looking out over the Danish countryside.You can choose a 60-minute treatment from the treatment menu - we like the sound of the Sensory Body Massage with Hot Stones, the Raindrop Massage or the English Rose Radiance Facial. The Serenity Spa Guide praises the venue\'s "countryside views" and "floor-to-ceiling windows" that "fill the pool and Jacuzzi area with natural light" ' 
                 ,999, './Pictures/xp1.jpg', './Pictures/Rating1.png','xpCPH1','"Amazing experience, highly recommend! - John, New York"'),
                 new Xperience('Experience Copenhagen the Danish way!', 'Bike tour','Join us on a bike ride through the town and celebrate and experience Danish  bicycles, design, Copenhagen and the Danish way of life. At Cycling Copenhagen we love our city  and we’d love for you to experience it the way the locals do – on a  bike in a wonderful city, which is all about bicycles… It’s as simple as that! Whether you’re looking for the best cocktail in town, the place to shop for clothes from the up and coming Danish designers, or the less touristy modern art shows, we’ll give you our best and personal suggestions of where to go – while biking in the City of Cyclists.'
@@ -34,17 +36,17 @@ function getAllProducts(){
     return products
 }
 
-// funtion to load the products 
+// funtion to load the products; it creates the objects
 loadProducts()
 
 //function to find a product based on it's ID
-// the function takes both the array and ID as inputs
+//The function takes both the array and ID as inputs
 const findProductById = (data, id) => {
     const product = data.find((product) => {
             return product.id === id
     })
 
-    return product //the funtion will return the product
+    return product //the funtion will return the product that matches the id from the function parameter
 }
 
 /**
@@ -56,10 +58,10 @@ function productAdded(quant, name) {
     alert( `${name} has been added ${quant} times`);
     }
 
-// Create a function that adds a product by it's ID and its quantity to the shopping cart
+// Create a function that adds a product by it's ID and it's quantity to the shopping cart
 const addToCart = (id, quant, name) => {
     if (!findProductById(cart, id)) {
-            cart.push({...findProductById(products, id), quantity: quant}) 
+            cart.push({...findProductById(products, id), quantity: quant}) //dots are called spread operators: dots are used to take apart an object (product in our case) and it is returned structured with the added quantity; we used it because class experience does not have q so we have to format the object and add the quantity; the result is a new object which has all the properties plus quantity
             //if the product is not found in the cart then we show the quantity that was selected
     } else {
             findProductById(cart, id).quantity += quant       
@@ -70,17 +72,18 @@ const addToCart = (id, quant, name) => {
     productAdded(quant, name)
     saveCart()
 
-//Reload the browser so the html script is up to date
+//Reload the browser so the html script is up to date; used because we need the variable quantity to update
     location.reload();
 }
 
 // Create a function that removes a product by it's ID from the shopping cart
 // We delete experiences one by one and remove the line in case we go below 1
+//index will get the position of the button we are on
 const removeFromCart = (id, index) => {
     if (findProductById(cart, id).quantity === 1) {
-        cart.splice(index,1)
+        cart.splice(index,1) //we delete the object from the cart
     } else {
-        cart[index].quantity--
+        cart[index].quantity-- //in the cart array, at the position index we decrease quantity with 1
     }
     saveCart()
     generateCartDOM() //invoke the function to generate the new cart 
@@ -121,6 +124,3 @@ const calculteTotal = () => {
 
 // Make sure to load the cart array
 loadCart()
-
-
-

@@ -31,7 +31,7 @@ const generateCartDOM = () => {
     }
 
     html += `<tr><td>Total:</td><td id="total">${calculteTotal().toFixed(2)} DKK.</td></tr>`
-
+    //to fixed is in the case we have prices with decimals
     shoppingCart.innerHTML = html
     addRemoveButton()
 }
@@ -44,7 +44,7 @@ function addRemoveButton() {
       
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', (event) => {
-            removeFromCart(buttons[i].dataset.id, i)
+            removeFromCart(buttons[i].dataset.id, i)//dataset allow to get the value that you placed in html
         })
     }
 }

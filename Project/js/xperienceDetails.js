@@ -1,3 +1,4 @@
+//this is for each experience html page
 //the variable idCapital gets the hash of the link 
 const id = location.hash.substring(1)
 //the variable experience get the products returned by the function getAllProducts
@@ -28,8 +29,8 @@ const experiences = getAllProducts()
         //on the click of the button the variable quantity will invoke the function addToCart
         for (let i = 0; i < buttons.length; i++) {
             buttons[i].addEventListener('click', (event) => {
-                let quantity = buttons[i].previousElementSibling.value
-                addToCart(experience.id, Number(quantity), experience.name)
+                let quantity = buttons[i].previousElementSibling.value //this takes the value that is found before the button
+                addToCart(experience.id, Number(quantity), experience.name) //number convert quantity into a value
             })
         }
 

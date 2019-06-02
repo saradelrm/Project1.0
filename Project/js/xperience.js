@@ -1,4 +1,4 @@
-//the variable idCapital gets the hash of the link 
+//the variable idCapital gets the hash of the link= the part that is after the #
 const idCapital = location.hash.substring(1)
 
 

@@ -1,4 +1,3 @@
-
 // Create a user class, so we have an easy way to create users and further implement features at a later stage
 class User {
 
@@ -24,13 +23,14 @@ class User {
       //In case there is users, retrieve them
       users = JSON.parse(localStorage.getItem('users'));
 
-      //for each user, add a new object to the user class with each of the atributes defined
+      //for each user, we add a new object to the user class with each of the atributes defined
       for (let i = 0; i < users.length; i++) {
         users[i] = new User(users[i].firstname, users[i].lastname, users[i].username, users[i].email, users[i].password, users[i].logged);
       }
     }
   }
   userCheck()
+
   // Bind the button to a variable for later use
   var submit = document.getElementById('submit');
   var signUp = document.getElementById('signUp');
@@ -41,7 +41,7 @@ class User {
   // Bind a counter in order to see if the user has tried to login too many times
   var counter = 3;
 
-  //This is the Sign up form
+  //The Sign up form
   if (signUp) {
     signUp.onclick = function () {
     // Bind the six input fields and get the value
@@ -88,13 +88,14 @@ class User {
   //Log in form
   if (submit) {
     // Bind the onClick-function to our own function
+    //everytime we click on the login button we will execute our function
     submit.onclick = function(){
   
       // Bind the two input fields and get the value
       var inputUsername = document.getElementById('username');
       var inputPassword = document.getElementById('password');
   
-      // Check if the user has intrudec a name or password
+      // Check if the user has introduced a name or password
       if(inputUsername.value.length == 0 || inputPassword.value.length == 0){
         // In case nor we set the resultspan with a new text and return false to get out of this function
         resultSpan.innerText = "You need to enter a username and password in order to use our system";
@@ -111,17 +112,14 @@ class User {
         if(user.username == inputUsername.value && user.password == inputPassword.value) {
 
           users[i].logged = 1;
-         
+         //updating the logged variable in local storage for this particular user
           localStorage.setItem('users', JSON.stringify(users));
   
-          
           // Redirect to Purchase site, since the credentials are the correct ones
           function goPurchase(){
             window.location.href="./purchase.html"
           }
           goPurchase();         
-          
-          //return true;
         }
       }
   
@@ -145,7 +143,7 @@ class User {
         // Update the counter with an attempt of logging in
         counter--;
   
-        // Return false, since we do not have anything more to do
+        // Return false, since we do not have anything more to do, to stop the function
         return false;
       }
     };  
