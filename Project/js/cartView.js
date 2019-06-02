@@ -44,7 +44,7 @@ function addRemoveButton() {
       
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', (event) => {
-            removeFromCart(buttons[i].dataset.id, i)//dataset allow to get the value that you placed in html
+            removeFromCart(buttons[i].dataset.id, i)//dataset allow to get the value that we placed in html
         })
     }
 }

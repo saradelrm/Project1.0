@@ -79,6 +79,7 @@ const addToCart = (id, quant, name) => {
 // Create a function that removes a product by it's ID from the shopping cart
 // We delete experiences one by one and remove the line in case we go below 1
 //index will get the position of the button we are on
+
 const removeFromCart = (id, index) => {
     if (findProductById(cart, id).quantity === 1) {
         cart.splice(index,1) //we delete the object from the cart
